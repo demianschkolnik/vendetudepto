@@ -1,14 +1,9 @@
 
-<%= simple_form_for(@pedido), wrapper_mappings: {
-  check_boxes:    :vertical_collection,
-  radio_buttons:  :vertical_collection,
-  file:           :custom_file,
-  boolean:        :custom_boolean_switch
-} do |f| %>
+<%= simple_form_for(@pedido), wrapper: :horizontal_form, gtml: {class: 'form-horizontal'} do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
+  <div class="form-group">
     <%= f.input :nombre %>
     <%= f.input :mail %>
     <%= f.input :telefono %>
