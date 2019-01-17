@@ -14,7 +14,7 @@
     <%= f.input :descripcion, as: :text %>
     <%= f.input :tipo, collection: ['Departamento','Casa','Oficina'] %>
     <%= f.input :operacion, collection: ['Venta', 'Arriendo'] %>
-    <%= f.input :region, as: :radio_buttons, collection: [' I Región de Tarapacá','Región Metropolitana', 'Ninguna']%>
+    <%= f.input :region, as: :radio_buttons, wrapper: :vertical_collection_inline, collection: [' I Región de Tarapacá','Región Metropolitana', 'Ninguna']%>
     <%= f.input :comuna %>
     <%= f.input :direccion %>
     <%= f.input :superficie %>
