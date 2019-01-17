@@ -19,7 +19,6 @@
 //= require bootstrap
 
 // custom
-//= require bootstrap_static_form_validation
 //= require fill_controller
 //= require password_controller
 //= require toggle_controller
