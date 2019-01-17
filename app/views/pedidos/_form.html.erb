@@ -1,11 +1,6 @@
 
 <div class= 'container'>
-<%= simple_form_for(@pedido,  wrapper_mappings: {
-  check_boxes:    :vertical_collection,
-  radio_buttons:  :vertical_collection,
-  file:           :custom_file,
-  boolean:        :custom_boolean_switch
-}) do |f| %>
+<%= simple_form_for(@pedido, wrapper: :horizontal_form, html : {class='form-horizontal'}) do |f| %>
   
   
   
