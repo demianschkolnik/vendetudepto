@@ -17,7 +17,7 @@
     
     <%= f.input :tipo, collection: ['Departamento','Casa','Oficina', 'Terreno', 'Parcela', 'Estacionamiento'] %>
     <%= f.input :operacion, as: :radio_buttons, wrapper: :vertical_collection_inline, collection: ['Venta', 'Arriendo'], placeholder: 'Seleccione accion que desea realizar con la propiedad' %>
-    <%= f.input :direccion %>  
+    <%= f.input :direccion, hint: 'No special characters.' %>  
     <%= f.input :region, collection: ['I Región de Tarapacá',
     'II Región de Antofagasta', 
     'III Región de Atacama', 
