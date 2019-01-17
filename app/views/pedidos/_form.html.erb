@@ -17,25 +17,26 @@
   <h5> Porfavor ingrese los datos sobre la propiedad a tasar</h5>
     
     <%= f.input :tipo, collection: ['Departamento','Casa','Oficina', 'Terreno', 'Parcela', 'Estacionamiento'] %>
-    <%= f.input :operacion, as: :radio_buttons, wrapper: :vertical_collection_inline, collection: ['Venta', 'Arriendo'], placeholder: 'Seleccione accion que desea realizar con la propiedad' %>
-    <%= f.input :direccion, hint: 'Dirección de la propiedad a tasar.' %>  
-    <%= f.input :region, collection: ['I Región de Tarapacá',
-    'II Región de Antofagasta', 
-    'III Región de Atacama', 
-    'IV Región de Coquimbo', 
-    'V Región de Valparaíso', 
-    'VI Región del Libertador General Bernardo O’Higgins',
-    'VII Región del Maule', 
-    'VIII Región del Biobío',  
-    'IX Región de La Araucanía',
-    'X Región de Los Lagos',
-    'XI Región Aysén del General Carlos Ibáñez del Campo',
-    'XII Región de Magallanes y Antártica Chilena',
-    'Región Metropolitana de Santiago',
-    'XIV Región de Los Ríos',
-    'XV Región de Arica y Parinacota',
-    'XVI Región de Ñuble'], label: 'Región' %>
-  
+    <%= f.input :operacion, label: 'Operación', as: :radio_buttons, wrapper: :vertical_collection_inline, collection: ['Venta', 'Arriendo'], placeholder: 'Seleccione accion que desea realizar con la propiedad' %>
+    <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.' %>  
+    <%= f.input :region, collection: [
+      'I Región de Tarapacá',
+      'II Región de Antofagasta', 
+      'III Región de Atacama', 
+      'IV Región de Coquimbo', 
+      'V Región de Valparaíso', 
+      'VI Región del Libertador General Bernardo O’Higgins',
+      'VII Región del Maule', 
+      'VIII Región del Biobío',  
+      'IX Región de La Araucanía',
+      'X Región de Los Lagos',
+      'XI Región Aysén del General Carlos Ibáñez del Campo',
+      'XII Región de Magallanes y Antártica Chilena',
+      'Región Metropolitana de Santiago',
+      'XIV Región de Los Ríos',
+      'XV Región de Arica y Parinacota',
+      'XVI Región de Ñuble'], label: 'Región' %>
+    
     <%= f.input :comuna %>
     <%= f.input :superficie %>
     <%= f.input :dorms , label: 'Dormitorios'%>
@@ -47,7 +48,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'btn btn-success' %>
   </div>
 
   
