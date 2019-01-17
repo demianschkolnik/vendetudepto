@@ -39,7 +39,7 @@
     <%= f.input :comuna %>
     <%= f.input :superficie %>
     <%= f.input :dorms , label: 'Dormitorios'%>
-    <%= f.input :bano, label: 'Baños', collection: 10 .. 0 %>
+    <%= f.input :bano, label: 'Baños', collection: 0 .. 10 %>
     <%= f.input :estacionamiento , label: 'Estacionamientos'%>
     <%= f.input :anio, label: 'Año', collection: 1900 .. Time.current.year %>
     <%= f.input :piso, label: 'Cantidad de Pisos', hint: 'En caso de ser un departamento u oficina ingresar el piso en el que se encuentra' %>
