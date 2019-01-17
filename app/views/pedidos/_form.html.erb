@@ -1,6 +1,6 @@
 
 <div class= 'container'>
-<%= simple_form_for pedido, wrapper: :horizontal_form, label_html: {class='form-horizontal'} do |f| %>
+<%= simple_form_for( @pedido) do |f| %>
   
   
   
@@ -8,21 +8,21 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-group">
-    <%= f.input :nombre, label: 'NOOOOMBRE' %>
-    <%= f.input :mail %>
-    <%= f.input :telefono %>
+    <%= f.input :nombre, label: 'Nombre' %>
+    <%= f.input :mail, , label: 'Correo' %>
+    <%= f.input :telefono, label: 'Teléfono' %>
     <%= f.input :descripcion, as: :text %>
-    <%= f.input :tipo, collection: 18 .. 60 %>
-    <%= f.input :operacion %>
-    <%= f.input :region, as: :radio_buttons %>
+    <%= f.input :tipo, collection: ['Departamento','Casa','Oficina'] %>
+    <%= f.input :operacion, collection: ['Venta', 'Arriendo'] %>
+    <%= f.input :region, as: :radio_buttons, collection: [' I Región de Tarapacá','Región Metropolitana', 'Ninguna'%>
     <%= f.input :comuna %>
     <%= f.input :direccion %>
     <%= f.input :superficie %>
-    <%= f.input :dorms %>
-    <%= f.input :bano %>
-    <%= f.input :estacionamiento %>
-    <%= f.input :anio %>
-    <%= f.input :piso %>
+    <%= f.input :dorms , label: 'Dormitorios'%>
+    <%= f.input :bano, , label: 'Baños' %>
+    <%= f.input :estacionamiento , label: 'Estacionamientos'%>
+    <%= f.input :anio, label: 'Año' %>
+    <%= f.input :piso, label: 'Cantidad de pisos/ Piso en que se encuentra' %>
   </div>
 
   <div class="form-actions">
