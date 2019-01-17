@@ -13,13 +13,13 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-group">
-    <%= f.input :nombre %>
+    <%= f.input :nombre, label: 'NOOOOMBRE' %>
     <%= f.input :mail %>
     <%= f.input :telefono %>
-    <%= f.input :descripcion %>
-    <%= f.input :tipo %>
+    <%= f.input :descripcion, as: :text %>
+    <%= f.input :tipo, collection: 18 .. 60 %>
     <%= f.input :operacion %>
-    <%= f.input :region %>
+    <%= f.input :region, as: :radio_buttons %>
     <%= f.input :comuna %>
     <%= f.input :direccion %>
     <%= f.input :superficie %>
