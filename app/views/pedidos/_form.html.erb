@@ -13,11 +13,12 @@
     <%= f.input :telefono, label: 'Teléfono', placeholder: '+569 - 123456789' %>
   </div> 
   <div class="form-group">
+  <br>
   <h5> Porfavor ingrese los datos sobre la propiedad a tasar</h5>
     
     <%= f.input :tipo, collection: ['Departamento','Casa','Oficina', 'Terreno', 'Parcela', 'Estacionamiento'] %>
     <%= f.input :operacion, as: :radio_buttons, wrapper: :vertical_collection_inline, collection: ['Venta', 'Arriendo'], placeholder: 'Seleccione accion que desea realizar con la propiedad' %>
-    <%= f.input :direccion, hint: 'No special characters.' %>  
+    <%= f.input :direccion, hint: 'Dirección de la propiedad a tasar.' %>  
     <%= f.input :region, collection: ['I Región de Tarapacá',
     'II Región de Antofagasta', 
     'III Región de Atacama', 
@@ -33,15 +34,15 @@
     'Región Metropolitana de Santiago',
     'XIV Región de Los Ríos',
     'XV Región de Arica y Parinacota',
-    'XVI Región de Ñuble']%>
+    'XVI Región de Ñuble'], label: Región %>
   
     <%= f.input :comuna %>
     <%= f.input :superficie %>
     <%= f.input :dorms , label: 'Dormitorios'%>
-    <%= f.input :bano, label: 'Baños', collection: 0 .. 10 %>
+    <%= f.input :bano, label: 'Baños', collection: 10 .. 0 %>
     <%= f.input :estacionamiento , label: 'Estacionamientos'%>
     <%= f.input :anio, label: 'Año', collection: 1900 .. Time.current.year %>
-    <%= f.input :piso, label: 'Cantidad de pisos/ Piso en que se encuentra' %>
+    <%= f.input :piso, label: 'Cantidad de Pisos', hint: 'En caso de ser un departamento u oficina ingresar el piso en el que se encuentra' %>
     <%= f.input :descripcion, as: :text, placeholder: 'Datos adicionales que desee agregar sobre su propiedad' %>
   </div>
 
