@@ -9,20 +9,40 @@
 
   <div class="form-group">
     <%= f.input :nombre, label: 'Nombre' %>
-    <%= f.input :mail, label: 'Correo' %>
+    <%= f.input :mail, label: 'Correo', placeholder: 'nombre@domain.com' %>
     <%= f.input :telefono, label: 'Teléfono' %>
-    <%= f.input :descripcion, as: :text %>
-    <%= f.input :tipo, collection: ['Departamento','Casa','Oficina'] %>
-    <%= f.input :operacion, collection: ['Venta', 'Arriendo'] %>
-    <%= f.input :region, as: :radio_buttons, wrapper: :vertical_collection_inline, collection: [' I Región de Tarapacá','Región Metropolitana', 'Ninguna']%>
+  </div> 
+  <div class="form-group">
+  <h3> Porfavor ingrese los datos sobre la propiedad a tasar</h3>
+    
+    <%= f.input :tipo, collection: ['Departamento','Casa','Oficina', 'Terreno', 'Parcela', 'Estacionamiento'] %>
+    <%= f.input :operacion, as: :radio_buttons, wrapper: :vertical_collection_inline, collection: ['Venta', 'Arriendo'] %>
+    <%= f.input :direccion %>  
+    <%= f.input :region, collection: ['I Región de Tarapacá',
+    'II Región de Antofagasta', 
+    'III Región de Atacama', 
+    'IV Región de Coquimbo', 
+    'V Región de Valparaíso', 
+    'VI Región del Libertador General Bernardo O’Higgins',
+    'VII Región del Maule', 
+    'VIII Región del Biobío',  
+    'IX Región de La Araucanía',
+    'X Región de Los Lagos',
+    'XI Región Aysén del General Carlos Ibáñez del Campo',
+    'XII Región de Magallanes y Antártica Chilena',
+    'Región Metropolitana de Santiago',
+    'XIV Región de Los Ríos',
+    'XV Región de Arica y Parinacota',
+    'XVI Región de Ñuble']%>
+  
     <%= f.input :comuna %>
-    <%= f.input :direccion %>
     <%= f.input :superficie %>
     <%= f.input :dorms , label: 'Dormitorios'%>
-    <%= f.input :bano, label: 'Baños' %>
+    <%= f.input :bano, label: 'Baños', collection: 0 .. 10 %>
     <%= f.input :estacionamiento , label: 'Estacionamientos'%>
-    <%= f.input :anio, label: 'Año' %>
+    <%= f.input :anio, label: 'Año', collection: 1900 .. Time.current.year %>
     <%= f.input :piso, label: 'Cantidad de pisos/ Piso en que se encuentra' %>
+    <%= f.input :descripcion, as: :text, placeholder: 'Datos adicionales que desee agregar sobre su propiedad.' %>
   </div>
 
   <div class="form-actions">
