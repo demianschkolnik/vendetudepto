@@ -40,6 +40,7 @@
     <%= f.input :comuna, :required => true %>
     <%= f.input :superficie, placeholder: 'Superficie total aprox.' %>
     <%= f.input :dorms , label: 'Dormitorios'%>
+    
     <%= f.input :bano, label: 'Baños', collection: 0 .. 10 %>
     <%= f.input :estacionamiento , label: 'Estacionamientos'%>
     <%= f.input :anio, label: 'Año', collection: 1900 .. Time.current.year , :required => true %>

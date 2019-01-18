@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  pedidos#index
+  root pedidos#index
   resources :pedidos
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
