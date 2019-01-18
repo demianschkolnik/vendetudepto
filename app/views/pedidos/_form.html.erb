@@ -8,7 +8,7 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-group">
-    <%= f.input :nombre, label: 'Nombre', required %>
+    <%= f.input :nombre, label: 'Nombre', :required => true %>
     <%= f.input :mail, label: 'Correo', placeholder: 'nombre@domain.com' %>
     <%= f.input :telefono, label: 'Teléfono', placeholder: '+569 - 123456789' %>
   </div> 
