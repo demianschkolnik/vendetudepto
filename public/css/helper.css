@@ -30,7 +30,7 @@
 .overlay-gridtile-dark-blue {background: url(../images/pattern/overlay-gridtile-dark-blue.png); position:absolute;left:0;right:0;top: 0;bottom: 0;width: 100%;height: 100%;display: block;}
 .overlay-gridtile-yellow {background: url(../images/pattern/overlay-gridtile-yellow.png); position:absolute;left:0;right:0;top: 0;bottom: 0;width: 100%;height: 100%;display: block;}
 .overlay-gridtile-orange {background: url(../images/pattern/overlay-gridtile-orange.png); position:absolute;left:0;right:0;top: 0;bottom: 0;width: 100%;height: 100%;display: block;}
-.overlay-gridtile-dark-pink {background: url(../images/pattern/overlay-gridtile-dark-pink.png); position:absolute;left:0;right:0;top: 0;bottom: 0;width: 100%;height: 100%;display: block;}
+.overlay-gridtile-dark-pink {background: url(<% asset_path '/images/pattern/overlay-gridtile-dark-pink.png' %>); position:absolute;left:0;right:0;top: 0;bottom: 0;width: 100%;height: 100%;display: block;}
 .overlay-gridtile-grey {background: url(../images/pattern/overlay-gridtile-grey.png); position:absolute;left:0;right:0;top: 0;bottom: 0;width: 100%;height: 100%;display: block;}
 .overlay-gridtile-dark-grey {background: url(../images/pattern/overlay-gridtile-dark-grey.png); position:absolute;left:0;right:0;top: 0;bottom: 0;width: 100%;height: 100%;display: block;}
 .overlay-gridtile-black {background: url(../images/pattern/overlay-gridtile-black.png); position:absolute;left:0;right:0;top: 0;bottom: 0;width: 100%;height: 100%;display: block;}
