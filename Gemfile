@@ -38,7 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'simple_form'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
-gem  'themify-icons-rails'
+gem  'themify-icons-rails', github:'scratch-soft/themify-icons-rails'
 
 gem 'font-awesome-sass', '~> 5.6.1'
 
