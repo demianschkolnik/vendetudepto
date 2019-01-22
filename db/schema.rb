@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "piso"
     t.integer "sup_util"
     t.integer "orientacion"
+    t.integer "latitud"
+    t.integer "longitud"
   end
 
 end
