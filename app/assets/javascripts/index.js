@@ -74,10 +74,10 @@ jQuery(document).ready(function () {
 		iRegion++;
 	});
 
-	jQuery('#regiones').html(htmlRegion);
-	jQuery('#comunas').html(htmlComunas);
+	jQuery('#pedido_region').html(htmlRegion);
+	jQuery('#pedido_comuna').html(htmlComunas);
 
-	jQuery('#regiones').change(function () {
+	jQuery('#pedido_region').change(function () {
 		var iRegiones = 0;
 		var valorRegion = jQuery(this).val();
 		var htmlComuna = '<option value="sin-comuna">Seleccione comuna</option><option value="sin-comuna">--</option>';
@@ -91,16 +91,16 @@ jQuery(document).ready(function () {
 			}
 			iRegiones++;
 		});
-		jQuery('#comunas').html(htmlComuna);
+		jQuery('#pedido_comuna').html(htmlComuna);
 	});
-	jQuery('#comunas').change(function () {
+	jQuery('#pedido_comuna').change(function () {
 		if (jQuery(this).val() == 'sin-region') {
 			alert('seleccione Región');
 		} else if (jQuery(this).val() == 'sin-comuna') {
 			alert('selecciones Comuna');
 		}
 	});
-	jQuery('#regiones').change(function () {
+	jQuery('#pedido_region').change(function () {
 		if (jQuery(this).val() == 'sin-region') {
 			alert('seleccione Región');
 		}
