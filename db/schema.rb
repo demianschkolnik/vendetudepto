@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "anio"
     t.integer "piso"
     t.integer "sup_util"
+    t.integer "orientacion"
   end
 
 end
