@@ -20,4 +20,4 @@ Rails.application.config.assets.precompile += %w( index.js )
 Rails.application.config.assets.precompile += %w( helper.css )
 Rails.application.config.assets.precompile += %w( fonts-icons.css )
 Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf|otf|woff2)\z/
-Rails.application.config.assets.precompile += %w( TipoBaño.js )
+Rails.application.config.assets.precompile += %w( tipobano.js )
