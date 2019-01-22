@@ -4,12 +4,15 @@ class PedidosController < ApplicationController
   # GET /pedidos
   # GET /pedidos.json
   def index
-    @pedidos = Pedido.all
     @pedido = Pedido.new
   end
 
   # GET /pedidos/1
   # GET /pedidos/1.json
+  def listado
+    @pedidos = Pedido.all
+  end
+
   def show
   end
 
