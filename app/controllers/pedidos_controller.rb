@@ -61,10 +61,6 @@ class PedidosController < ApplicationController
     end
   end
 
-  def listado
-    @pedidos = Pedido.all
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pedido
@@ -73,8 +69,7 @@ class PedidosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pedido_params
-      params.require(:pedido).permit(:nombre, :mail, :telefono, :descripcion, :tipo, :operacion, :region, :comuna, :direccion, :superficie, :dorms, :bano, :estacionamiento, :anio, :piso)
-    end
+      params.require(:pedido).permit(:nombre, :mail, :telefono, :descripcion, :tipo, :operacion, :region, :comuna, :direccion, :superficie, :dorms, :bano, :estacionamiento, :anio, :piso, :sup_util)    end
 
   
 end
