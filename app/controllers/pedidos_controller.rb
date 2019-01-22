@@ -9,10 +9,6 @@ class PedidosController < ApplicationController
 
   # GET /pedidos/1
   # GET /pedidos/1.json
-  def listado
-    @pedidos = Pedido.all
-  end
-
   def show
   end
 
@@ -65,6 +61,10 @@ class PedidosController < ApplicationController
     end
   end
 
+  def listado
+    @pedidos = Pedido.all
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pedido
@@ -75,4 +75,6 @@ class PedidosController < ApplicationController
     def pedido_params
       params.require(:pedido).permit(:nombre, :mail, :telefono, :descripcion, :tipo, :operacion, :region, :comuna, :direccion, :superficie, :dorms, :bano, :estacionamiento, :anio, :piso)
     end
+
+  
 end
