@@ -40,11 +40,13 @@ wrapper_mappings: {
     <%= f.input :sup_util, placeholder: 'Superficie util aprox.', help: 'Terreno utilizado o a utilizar por construcción.' %>
     
     
-    <%= f.input :dorms , label: 'Dormitorios'%>
+    <%= f.input :dorms , label: 'Dormitorios', collection: ['1']%>
     <%= f.input :bano, label: 'Baños', collection: 0 .. 10 %>
-    <%= f.input :estacionamiento , label: 'Estacionamientos'%>
+    <%= f.input :estacionamiento , label: 'Estacionamientos', collection: ['1']%>
     <%= f.input :anio, label: 'Año', collection: 1900 .. Time.current.year , :required => true %>
-    <%= f.input :piso, label: 'Cantidad de Pisos', hint: 'En caso de ser un departamento u oficina ingresar el piso en el que se encuentra' %>
+    <%= f.input :piso, label: 'Cantidad de Pisos', hint: 'En caso de ser un departamento u oficina ingresar el piso en el que se encuentra', collection: ['1'] %>
+    <%= f.input :orientacion , label: 'Orientacion', collection: ['1'], as: :check_boxes %>
+
     <%= f.input :descripcion, as: :text, placeholder: 'Datos adicionales que desee agregar sobre su propiedad' %>
   </div>
 
