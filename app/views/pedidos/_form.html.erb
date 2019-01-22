@@ -37,11 +37,11 @@
       'XV Región de Arica y Parinacota',
       'XVI Región de Ñuble'], label: 'Región', :required => true %>
     
-   
+    <select id="regiones"></select> <!--Para el formulario de tasacion -->
+    <select id="comunas"></select>
     <%= f.input :superficie, placeholder: 'Superficie total aprox.' %>
    
     <%= f.input :dorms , label: 'Dormitorios'%>
-    
     <%= f.input :bano, label: 'Baños', collection: 0 .. 10 %>
     <%= f.input :estacionamiento , label: 'Estacionamientos'%>
     <%= f.input :anio, label: 'Año', collection: 1900 .. Time.current.year , :required => true %>
