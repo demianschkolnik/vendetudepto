@@ -2,31 +2,31 @@ var tipobano = {
 
 	"Tipos": [{
 			"tipo": "Oficina",
-			"baños": ["1","2","3","4","5","6"],
+			"banos": ["1","2","3","4","5","6"],
 			
 		}, 
 
 		{ "tipo": "Casa",
-			"baños": ["1","2","3","4","5","6"],
+			"banos": ["1","2","3","4","5","6"],
 			
 		},
 
         { "tipo": "Terreno",
-			"baños": ["--"],
+			"banos": ["--"],
 		},
 
         { "tipo": "Estacionamiento",
-			"baños": ["--"],
+			"banos": ["--"],
 			
 		},
 
 		{ "tipo": "Parcela",
-			"baños": ["--"],
+			"banos": ["--"],
 		
 		},
 
 		{ "tipo": 'Departamento', 
-			"baños": ["1","2","3","4","5","6"],
+			"banos": ["1","2","3","4","5","6"],
 		}
 		]
 }
@@ -45,7 +45,7 @@ jQuery(document).ready(function () {
 	});
 
 	jQuery('#pedido_tipo').html(htmlTipo);
-	jQuery('#pedido_banos').html(htmlbanos);
+	jQuery('#pedido_bano').html(htmlbanos);
 	
 
 
@@ -58,7 +58,7 @@ jQuery(document).ready(function () {
 			if (tipobano.Tipos[iTipos].tipo == valorTipo) {
 				var ibanos = 0;
 				jQuery.each(tipobano.Tipos[iTipos].baños, function () {
-					htmlbanos = htmlbanos + '<option value="' + tipobano.Tipos[iTipo].baños[ibanos] + '">' + tipobano.Tipos[iTipos].baños[ibanos] + '</option>';
+					htmlbanos = htmlbanos + '<option value="' + tipobano.Tipos[iTipo].banos[ibanos] + '">' + tipobano.Tipos[iTipos].banos[ibanos] + '</option>';
 					ibanos++;
 				});
 				
@@ -66,10 +66,10 @@ jQuery(document).ready(function () {
 			}
 			iTipo++;
 		});
-		jQuery('#pedido_banos').html(htmlbanos);
+		jQuery('#pedido_bano').html(htmlbanos);
 		
 	});
-	jQuery('#pedido_banos').change(function () {
+	jQuery('#pedido_bano').change(function () {
 		if (jQuery(this).val() == 'sin-tipo') {
 			alert('seleccione Tipo');
 		} else if (jQuery(this).val() == 'sin-bano') {
