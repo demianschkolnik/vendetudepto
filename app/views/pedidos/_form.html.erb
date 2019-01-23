@@ -43,13 +43,12 @@ wrapper_mappings: {
 
 
     <%= f.input :bano, label: 'Baños', collection: 0 .. 10 %>
-    <%= f.input :estacionamiento , label: 'Estacionamientos', collection: ['1'], input_html:{}%>
+    <%= f.input :estacionamiento , label: 'Estacionamientos', collection: ['1'], :input_html => {:onchange => "readURL(this)"}%>
     <%= f.input :anio, label: 'Año', collection: 1900 .. Time.current.year , :required => true %>
     <%= f.input :piso, label: 'Cantidad de Pisos', hint: 'En caso de ser un departamento u oficina ingresar el piso en el que se encuentra', collection: ['1'] %>
     
     <script type="text/javascript">
     $('#pedido_tipo').on('change',function(){
-    function(){
         if ($('#pedido_tipo').val() == 'Terreno'){
             $('#pedido_bano').hide();
             $('#pedido_estacionamiento').hide();
@@ -75,7 +74,7 @@ wrapper_mappings: {
           $('#pedido_piso').show();
         }
        
-    })});    
+    });    
   
     </script>
     
