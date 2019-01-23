@@ -43,27 +43,44 @@ wrapper_mappings: {
 
 
     <%= f.input :bano, label: 'Baños', collection: 0 .. 10 %>
-    <%= f.input :estacionamiento , label: 'Estacionamientos', collection: ['1']%>
+    <%= f.input :estacionamiento , label: 'Estacionamientos', collection: ['1'], input_html:{%>
     <%= f.input :anio, label: 'Año', collection: 1900 .. Time.current.year , :required => true %>
     <%= f.input :piso, label: 'Cantidad de Pisos', hint: 'En caso de ser un departamento u oficina ingresar el piso en el que se encuentra', collection: ['1'] %>
+    
     <script type="text/javascript">
+    $('#pedido_tipo').on('change',function(){
     $(function(){
-        if ($('#pedido_tipo').val() == 'Terreno')
+        if ($('#pedido_tipo').val() == 'Terreno'){
             $('#pedido_bano').hide();
             $('#pedido_estacionamiento').hide();
-    });
-    </script>
-    <script type="text/javascript">
-    $(function(){
-        if ($('#pedido_tipo').val() == 'Estacionamiento')
-            $('#pedido_estacionamiento').hide()
-            $('#pedido_dorms').hide();
-            $('#pedido_bano').hide();
             $('#pedido_piso').hide();
-    });
+            $('#pedido_dorms').hide();
+          }
+        else if ($('#pedido_tipo').val() == 'Estacionamiento'){
+          $('#pedido_estacionamiento').hide()
+          $('#pedido_dorms').hide();
+          $('#pedido_bano').hide();
+          $('#pedido_piso').hide();
+          }
+        else if ($('#pedido_tipo').val() == 'Oficina'){
+            $('#pedido_dorms').hide();
+          }
+        else if ($('#pedido_tipo').val() == 'Parcela'){
+            $('#pedido_estacionamiento').hide();
+        }
+        else{
+          $('#pedido_estacionamiento').show()
+          $('#pedido_dorms').show();
+          $('#pedido_bano').show();
+          $('#pedido_piso').show();
+        }
+       
+    })});    
+  
     </script>
-    <%= f.input :orientacion , label: 'Orientacion', collection: ['Norte', 'Sur', 'Este', 'Oeste'], as: :check_boxes %>
-
+    
+    
+    <%= f.input :orientacion , label: 'Orientacion', collection: ['Norte', 'Sur', 'Este', 'Oeste'], as: :radio_buttons %>
     <%= f.input :descripcion, as: :text, placeholder: 'Datos adicionales que desee agregar sobre su propiedad' %>
   </div>
 
