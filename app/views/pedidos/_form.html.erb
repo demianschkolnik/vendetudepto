@@ -52,7 +52,10 @@ wrapper_mappings: {
 
     $(function(){
         if ($('#pedido_tipo').val() == 'Estacionamiento')
-            $('#pedido_estacionamiento').hide();
+            $('#pedido_estacionamiento').hide()
+            $('#pedido_dorms').hide()
+            $('#pedido_bano').hide()
+            $('#pedido_piso').hide();
     });
     </script>
     <%= f.input :orientacion , label: 'Orientacion', collection: ['Norte', 'Sur', 'Este', 'Oeste'], as: :check_boxes %>
