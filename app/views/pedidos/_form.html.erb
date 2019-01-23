@@ -50,28 +50,28 @@ wrapper_mappings: {
     <script type="text/javascript">
     $('#pedido_tipo').on('change',function(){
         if ($('#pedido_tipo').val() == 'Terreno'){
-            $('#pedido_bano').hide();
-            $('#pedido_estacionamiento').hide();
-            $('#pedido_piso').hide();
-            $('#pedido_dorms').hide();
+            $('.pedido_bano').hide();
+            $('.pedido_estacionamiento').hide();
+            $('.pedido_piso').hide();
+            $('.pedido_dorms').hide();
           }
         else if ($('#pedido_tipo').val() == 'Estacionamiento'){
-          $('#pedido_estacionamiento').hide()
-          $('#pedido_dorms').hide();
-          $('#pedido_bano').hide();
-          $('#pedido_piso').hide();
+          $('.pedido_estacionamiento').hide()
+          $('.pedido_dorms').hide();
+          $('.pedido_bano').hide();
+          $('.pedido_piso').hide();
           }
         else if ($('#pedido_tipo').val() == 'Oficina'){
-            $('#pedido_dorms').hide();
+            $('.pedido_dorms').hide();
           }
         else if ($('#pedido_tipo').val() == 'Parcela'){
-            $('#pedido_estacionamiento').hide();
+            $('.pedido_estacionamiento').hide();
         }
         else{
-          $('#pedido_estacionamiento').show()
-          $('#pedido_dorms').show();
-          $('#pedido_bano').show();
-          $('#pedido_piso').show();
+          $('.pedido_estacionamiento').show()
+          $('.pedido_dorms').show();
+          $('.pedido_bano').show();
+          $('.pedido_piso').show();
         }
        
     });    
