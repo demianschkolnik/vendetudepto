@@ -39,7 +39,7 @@ wrapper_mappings: {
     
     <%= f.input :dorms , label: 'Dormitorios', collection: 0 .. 10 , wrapper_html: { class: 'hide' },  style: "#{'display:none' if '#pedido_tipo' == "Estacionamiento"}"%>
     
-    <%= f.input :email, :required => true, :autofocus => true, :input_html => { :onclick => "function(){
+    <%= f.input :dorms, :required => true, :autofocus => true, :input_html => { :onclick => "function(){
       if ($('#pedido_tipo').val() == 'Terreno')
           $('#pedido_bano').hide();
           $('#pedido_estacionamiento').hide();
