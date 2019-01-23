@@ -32,12 +32,9 @@ wrapper_mappings: {
     <%= f.input :region, collection: [
       'I Región de Tarapacá'], label: 'Región', :required => true %>
     
-      <%= f.input :comuna, collection: ['Seleccione e'], label: 'Comuna', :required => true %>
-
-  
-
+    <%= f.input :comuna, collection: ['Seleccione e'], label: 'Comuna', :required => true %>
     <%= f.input :superficie, placeholder: 'Superficie total aprox.' %>
-    <%= f.input :sup_util, placeholder: 'Superficie util aprox.', help: 'Terreno utilizado o a utilizar por construcción.' %>
+    <%= f.input :sup_util, placeholder: 'Superficie util aprox.', help: 'Terreno utilizado o a utilizar por construcción.', label: "Superficie útil" %>
     
     
     <%= f.input :dorms , label: 'Dormitorios', collection: ['1']%>
@@ -45,7 +42,7 @@ wrapper_mappings: {
     <%= f.input :estacionamiento , label: 'Estacionamientos', collection: ['1']%>
     <%= f.input :anio, label: 'Año', collection: 1900 .. Time.current.year , :required => true %>
     <%= f.input :piso, label: 'Cantidad de Pisos', hint: 'En caso de ser un departamento u oficina ingresar el piso en el que se encuentra', collection: ['1'] %>
-    <%= f.input :orientacion , label: 'Orientacion', collection: ['1'], as: :check_boxes %>
+    <%= f.input :orientacion , label: 'Orientacion', collection: ['Norte', 'Sur', 'Este', 'Oeste'], as: :check_boxes %>
 
     <%= f.input :descripcion, as: :text, placeholder: 'Datos adicionales que desee agregar sobre su propiedad' %>
   </div>

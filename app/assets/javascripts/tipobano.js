@@ -5,37 +5,43 @@ var tipobano = {
 			"baños": ["1","2","3","4","5","6"],
 			"dormitorios": ['--'],
 			"piso": ['--'],
-			"orientacion":['Norte', 'Sur', 'Este', 'Oeste']}, 
+			"orientacion":['Norte', 'Sur', 'Este', 'Oeste']
+		}, 
 
 		{ "tipo": "Casa",
 			"baños": ["1","2","3","4","5","6"],
 			"dormitorios": ["1","2","3","4","5","6"],
 			"piso": ['1','2','3','4'],
-			"orientacion":['--']},
+			"orientacion":['--']
+		},
 
         { "tipo": "Terreno",
 			"baños": ["--"],
 			"dormitorios": ['--'],
 			"piso": ['--'],
-			"orientacion":['--']},
+			"orientacion":['--']
+		},
 
         { "tipo": "Estacionamiento",
 			"baños": ["--"],
 			"dormitorios": ['--'],
 			"piso": ['--'],
-			"orientacion":['--']},
+			"orientacion":['--']
+		},
 
 		{ "tipo": "Parcela",
 			"baños": ["--"],
 			"dormitorios": ['--'],
 			"piso": ['--'],
-			"orientacion":['--']},
+			"orientacion":['--']
+		},
 
 		{ "tipo": 'Departamento', 
 			"baños": ["1","2","3","4","5","6"],
 			"dormitorios": ["1","2","3","4","5","6"],
 			"piso": [],
-			"orientacion":['Norte', 'Sur', 'Este', 'Oeste']}
+			"orientacion":['Norte', 'Sur', 'Este', 'Oeste']
+		}
 		]
 }
 
@@ -58,7 +64,7 @@ jQuery(document).ready(function () {
 	jQuery('#pedido_banos').html(htmlbanos);
 	jQuery('#pedido_dorms').html(htmldorms);
 	jQuery('#pedido_piso').html(htmlpiso);
-	jQuery('#pedido_orientacion').html(htmlorientacion);
+	jQuery('#pedido_orientacion_Norte').html(htmlorientacion);
 
 
 	jQuery('#pedido_tipo').change(function () {
@@ -74,6 +80,7 @@ jQuery(document).ready(function () {
 				var idorms = 0;
 				var ipiso = 0;
 				var iorientacion = 0;
+
 				jQuery.each(tipobano.Tipos[iTipos].baños, function () {
 					htmlbanos = htmlbanos + '<option value="' + tipobano.Tipos[iTipo].baños[ibanos] + '">' + tipobano.Tipos[iTipos].baños[ibanos] + '</option>';
 					ibanos++;
@@ -95,6 +102,9 @@ jQuery(document).ready(function () {
 			iTipo++;
 		});
 		jQuery('#pedido_banos').html(htmlbanos);
+		jQuery('#pedido_dorms').html(htmldorms);
+		jQuery('#pedido_piso').html(htmlpiso);
+		jQuery('#pedido_orientacion_Norte').html(htmlorientacion);
 	});
 	jQuery('#pedido_banos').change(function () {
 		if (jQuery(this).val() == 'sin-tipo') {
