@@ -42,6 +42,12 @@ wrapper_mappings: {
     <%= f.input :estacionamiento , label: 'Estacionamientos', collection: ['1']%>
     <%= f.input :anio, label: 'Año', collection: 1900 .. Time.current.year , :required => true %>
     <%= f.input :piso, label: 'Cantidad de Pisos', hint: 'En caso de ser un departamento u oficina ingresar el piso en el que se encuentra', collection: ['1'] %>
+    <script type="text/javascript">
+    $(function(){
+        if ($('#pedido_tipo').val() != 'Estacionamiento')
+            $('#pedido_estacionamiento').hide();
+    });
+    </script>
     <%= f.input :orientacion , label: 'Orientacion', collection: ['Norte', 'Sur', 'Este', 'Oeste'], as: :check_boxes %>
 
     <%= f.input :descripcion, as: :text, placeholder: 'Datos adicionales que desee agregar sobre su propiedad' %>
