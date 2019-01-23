@@ -37,7 +37,7 @@ wrapper_mappings: {
     <%= f.input :sup_util, placeholder: 'Superficie util aprox.', help: 'Terreno utilizado o a utilizar por construcción.', label: "Superficie útil" %>
     
     
-    <%= f.input :dorms , label: 'Dormitorios', collection: ['1'], class: "#{'display-none' if @pedido.tipo == "Estacionamiento"}"%>
+    <%= f.input :dorms , label: 'Dormitorios', collection: ['1'], class: "#{'display:none' if @pedido.tipo == "Estacionamiento"}"%>
     <%= f.input :bano, label: 'Baños', collection: 0 .. 10 %>
     <%= f.input :estacionamiento , label: 'Estacionamientos', collection: ['1']%>
     <%= f.input :anio, label: 'Año', collection: 1900 .. Time.current.year , :required => true %>
