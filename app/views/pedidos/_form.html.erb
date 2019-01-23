@@ -38,7 +38,7 @@ wrapper_mappings: {
     
     
     <%= f.input :dorms , label: 'Dormitorios', collection: 0 .. 10 , wrapper_html: { class: 'hide' },  style: "#{'display:none' if '#pedido_tipo' == "Estacionamiento"}"%>
-    <%= f.input :dorms, :as => :hidden, :input_html => { :value => 'hola' } %>
+
 
 
 
@@ -49,7 +49,7 @@ wrapper_mappings: {
     
     <script type="text/javascript">
     $('#pedido_tipo').on('change',function(){
-    $(function(){
+    function(){
         if ($('#pedido_tipo').val() == 'Terreno'){
             $('#pedido_bano').hide();
             $('#pedido_estacionamiento').hide();
