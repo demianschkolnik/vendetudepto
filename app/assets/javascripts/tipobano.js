@@ -1,6 +1,6 @@
-var TipoyBaño = {
+var tipobano = {
 
-	"Tipo": [{
+	"Tipos": [{
 			"tipo": "Oficina",
 			"baños": ["1","2","3","4","5","6"],
 			"dormitorios": ['--'],
@@ -49,8 +49,8 @@ jQuery(document).ready(function () {
 	var htmlorientacion = '<option value="sin-tipo">Seleccione Orientación</option><option value="sin-tipo">--</option>';
 
 
-	jQuery.each(TipoyBaño.Tipo, function () {
-		htmlTipo = htmlTipo + '<option value="' + TipoyBaños.Tipo[iTipo].tipo + '">' + TipoyBaños.Tipo[iTipo].tipo + '</option>';
+	jQuery.each(tipobano.Tipo, function () {
+		htmlTipo = htmlTipo + '<option value="' + tipobano.Tipos[iTipo].tipo + '">' + tipobano.Tipos[iTipo].tipo + '</option>';
 		iTipo++;
 	});
 
@@ -65,16 +65,32 @@ jQuery(document).ready(function () {
 		var iTipos = 0;
 		var valorTipo = jQuery(this).val();
 		var htmlbanos = '<option value="sin-bano">Seleccione Baño</option><option value="sin-bano">--</option>';
-		var htmlbanos = '<option value="sin-bano">Seleccione Baño</option><option value="sin-bano">--</option>';
-		var htmlbanos = '<option value="sin-bano">Seleccione Baño</option><option value="sin-bano">--</option>';
-		var htmlbanos = '<option value="sin-bano">Seleccione Baño</option><option value="sin-bano">--</option>';
-		jQuery.each(TipoyBaños.Tipo, function () {
-			if (TipoyBaños.Tipo[iTipos].tipo == valorTipo) {
+		var htmldorms = '<option value="sin-bano">Seleccione cantidad de Dormitorios</option><option value="sin-bano">--</option>';
+		var htmlpiso = '<option value="sin-bano">Seleccione Piso</option><option value="sin-bano">--</option>';
+		var htmlorientacion = '<option value="sin-bano">Seleccione Orientacion</option><option value="sin-bano">--</option>';
+		jQuery.each(tipobano.Tipos, function () {
+			if (tipobano.Tipos[iTipos].tipo == valorTipo) {
 				var ibanos = 0;
-				jQuery.each(TipoyBaños.Tipo[iTipos].baños, function () {
-					htmlComuna = htmlbanos + '<option value="' + TipoyBaños.Tipo[iTipo].baños[ibanos] + '">' + TipoyBaños.Tipo[iTipos].baños[ibanos] + '</option>';
+				var idorms = 0;
+				var ipiso = 0;
+				var iorientacion = 0;
+				jQuery.each(tipobano.Tipos[iTipos].baños, function () {
+					htmlbanos = htmlbanos + '<option value="' + tipobano.Tipos[iTipo].baños[ibanos] + '">' + tipobano.Tipos[iTipos].baños[ibanos] + '</option>';
 					ibanos++;
 				});
+				jQuery.each(tipobano.Tipos[iTipos].dormitorios, function () {
+					htmldorms = htmldorms + '<option value="' + tipobano.Tipos[iTipo].dormitorios[idorms] + '">' + tipobano.Tipos[iTipos].dormitorios[idorms] + '</option>';
+					idorms++;
+				});
+				jQuery.each(tipobano.Tipos[iTipos].piso, function () {
+					htmlpiso = htmlpiso + '<option value="' + tipobano.Tipos[iTipo].piso[ipiso] + '">' + tipobano.Tipos[iTipos].piso[ipiso] + '</option>';
+					ipiso++;
+				});
+				jQuery.each(tipobano.Tipos[iTipos].orientacion, function () {
+					htmlorientacion = htmlorientacion + '<option value="' + tipobano.Tipos[iTipo].orientacion[iorientacion] + '">' + tipobano.Tipos[iTipos].orientacion[iorientacion] + '</option>';
+					iorientacion++;
+				});
+
 			}
 			iTipo++;
 		});
