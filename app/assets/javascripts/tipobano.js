@@ -1,31 +1,31 @@
 var tipobano = {
 
 	"Tipos": [{
-			"tipo": "Oficina",
+			"Nombretipo": "Oficina",
 			"banos": ["1","2","3","4","5","6"],
 			
 		}, 
 
-		{ "tipo": "Casa",
+		{ "Nombretipo": "Casa",
 			"banos": ["1","2","3","4","5","6"],
 			
 		},
 
-        { "tipo": "Terreno",
+        { "Nombretipo": "Terreno",
 			"banos": ["--"],
 		},
 
-        { "tipo": "Estacionamiento",
+        { "Nombretipo": "Estacionamiento",
 			"banos": ["--"],
 			
 		},
 
-		{ "tipo": "Parcela",
+		{ "Nombretipo": "Parcela",
 			"banos": ["--"],
 		
 		},
 
-		{ "tipo": 'Departamento', 
+		{ "Nombretipo": 'Departamento', 
 			"banos": ["1","2","3","4","5","6"],
 		}
 		]
@@ -39,8 +39,8 @@ jQuery(document).ready(function () {
 	
 
 
-	jQuery.each(tipobano.Tipo, function () {
-		htmlTipo = htmlTipo + '<option value="' + tipobano.Tipos[iTipo].tipo + '">' + tipobano.Tipos[iTipo].tipo + '</option>';
+	jQuery.each(tipobano.Tipos, function () {
+		htmlTipo = htmlTipo + '<option value="' + tipobano.Tipos[iTipo].Nombretipo + '">' + tipobano.Tipos[iTipo].Nombretipo + '</option>';
 		iTipo++;
 	});
 
@@ -52,19 +52,19 @@ jQuery(document).ready(function () {
 	jQuery('#pedido_tipo').change(function () {
 		var iTipos = 0;
 		var valorTipo = jQuery(this).val();
-		var htmlbanos = '<option value="sin-bano">Seleccione Baño</option><option value="sin-bano">--</option>';
+		var htmlbanos = '<option value="sin-bano">Seleccione cantidad de Baño</option><option value="sin-bano">--</option>';
 		
 		jQuery.each(tipobano.Tipos, function () {
-			if (tipobano.Tipos[iTipos].tipo == valorTipo) {
+			if (tipobano.Tipos[iTipos].Nombretipo == valorTipo) {
 				var ibanos = 0;
-				jQuery.each(tipobano.Tipos[iTipos].baños, function () {
-					htmlbanos = htmlbanos + '<option value="' + tipobano.Tipos[iTipo].banos[ibanos] + '">' + tipobano.Tipos[iTipos].banos[ibanos] + '</option>';
+				jQuery.each(tipobano.Tipos[iTipos].banos, function () {
+					htmlbanos = htmlbanos + '<option value="' + tipobano.Tipos[iTipos].banos[ibanos] + '">' + tipobano.Tipos[iTipos].banos[ibanos] + '</option>';
 					ibanos++;
 				});
 				
 
 			}
-			iTipo++;
+			iTipos++;
 		});
 		jQuery('#pedido_bano').html(htmlbanos);
 		
