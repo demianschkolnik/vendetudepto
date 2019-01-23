@@ -44,8 +44,8 @@ wrapper_mappings: {
     <%= f.input :piso, label: 'Cantidad de Pisos', hint: 'En caso de ser un departamento u oficina ingresar el piso en el que se encuentra', collection: ['1'] %>
     <script type="text/javascript">
     $(function(){
-        if ($('#pedido_tipo').val() == 'Estacionamiento')
-            $('#pedido_estacionamiento').hide();
+        if ($('#pedido_tipo').val() == 'Terreno')
+            $('#pedido_bano').hide();
     });
     </script>
     <%= f.input :orientacion , label: 'Orientacion', collection: ['Norte', 'Sur', 'Este', 'Oeste'], as: :check_boxes %>

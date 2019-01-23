@@ -12,16 +12,16 @@ var tipobano = {
 		},
 
         { "Nombretipo": "Terreno",
-			"banos": ["--"],
+			"banos": [],
 		},
 
         { "Nombretipo": "Estacionamiento",
-			"banos": ["--"],
+			"banos": [],
 			
 		},
 
 		{ "Nombretipo": "Parcela",
-			"banos": ["--"],
+			"banos": [],
 		
 		},
 
