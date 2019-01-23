@@ -38,12 +38,9 @@ wrapper_mappings: {
     
     
     <%= f.input :dorms , label: 'Dormitorios', collection: 0 .. 10 , wrapper_html: { class: 'hide' },  style: "#{'display:none' if '#pedido_tipo' == "Estacionamiento"}"%>
-    
-    <%= f.input :dorms, :required => true, :autofocus => true, :input_html => { :onclick => "function(){
-      if ($('#pedido_tipo').val() == 'Terreno')
-          $('#pedido_bano').hide();
-          $('#pedido_estacionamiento').hide();
-  }", :style => "padding-left:93px;width:170px;" } %>
+    = f.input :dorms, :as => :hidden, :input_html => { :value => '' } 
+
+
 
     <%= f.input :bano, label: 'Baños', collection: 0 .. 10 %>
     <%= f.input :estacionamiento , label: 'Estacionamientos', collection: ['1']%>
