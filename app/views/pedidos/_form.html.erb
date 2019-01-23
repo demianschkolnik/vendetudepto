@@ -45,7 +45,14 @@ wrapper_mappings: {
     <script type="text/javascript">
     $(function(){
         if ($('#pedido_tipo').val() == 'Terreno')
-            $('#pedido_bano').hide();
+            $('#pedido_bano').hide()
+            $('#pedido_estacionamiento').hide;
+    });
+    </script>
+
+    $(function(){
+        if ($('#pedido_tipo').val() == 'Estacionamiento')
+            $('#pedido_estacionamiento').hide();
     });
     </script>
     <%= f.input :orientacion , label: 'Orientacion', collection: ['Norte', 'Sur', 'Este', 'Oeste'], as: :check_boxes %>
