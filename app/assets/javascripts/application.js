@@ -24,3 +24,5 @@
 //= require password_controller
 //= require toggle_controller
 //= require tooltip_controller
+//= require rails.validations
+//= require rails.validations.simple_form.bootstrap4

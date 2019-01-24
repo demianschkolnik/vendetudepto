@@ -40,6 +40,7 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem  'themify-icons-rails', github:'scratch-soft/themify-icons-rails'
 gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
 
 gem 'font-awesome-sass', '~> 5.6.1'
 
