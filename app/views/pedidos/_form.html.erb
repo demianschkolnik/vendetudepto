@@ -19,6 +19,7 @@ wrapper_mappings: {
   <div class="form-group">
     <%= f.input :nombre, label: 'Nombre', :required => true %>
     <%= f.input :mail, label: 'Correo', placeholder: 'nombre@dominio.com', :required => true %>
+    <%= f.input validates :mail, format: { with: URI::MailTo::EMAIL_REGEXP } %>
     <%= f.input :telefono, label: 'Teléfono', placeholder: '+56912345678', :required => true %>
   </div> 
   <div class="form-group">

@@ -28,8 +28,8 @@ class PedidosController < ApplicationController
 
     respond_to do |format|
       if @pedido.save
-        format.html { redirect_to @pedido, notice: 'Pedido was successfully created.' }
-        format.json { render :show, status: :created, location: @pedido }
+        format.html { redirect_to @pedido, notice: 'Tasación realizada con éxito.' }
+        format.json { render :index, status: :created, location: @pedido }
       else
         format.html { render :new }
         format.json { render json: @pedido.errors, status: :unprocessable_entity }
