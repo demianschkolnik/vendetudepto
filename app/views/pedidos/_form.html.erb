@@ -18,7 +18,7 @@ wrapper_mappings: {
 
   <div class="form-group">
     <%= f.input :nombre, label: 'Nombre', :required => true %>
-    <%= f.input :mail, label: 'Correo', placeholder: 'nombre@dominio.com', :required => true, class: 'js_validate_me js_event_mail' %>
+    <%= f.input :mail, label: 'Correo', placeholder: 'nombre@dominio.com', :required => true, validate: { presence: true, uniqueness: false } %>
    
     <%= f.input :telefono, label: 'Teléfono', placeholder: '+56912345678', :required => true %>
   </div> 
