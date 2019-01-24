@@ -3,9 +3,10 @@ class Pedido < ApplicationRecord
         :presence => true,
         :format => { :with => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/ ,
                      :message => 'Correo inválido! Porfavor ingresar correo correctamente'}
-    validates :nombre, :presence => true, presence: { message: "must be given please" }
-    validates :telefono, :presence => true, presence: { message: "must be given please" }
-    validates :tipo, :presence => true, presence: { message: "must be given please" }
-    validates :operacion, :presence => true, presence: { message: "must be given please" }
-    validates :direccion, :presence => true, presence: { message: "must be given please" }
+        :presence: { message: "Este campo es obligatorio." }
+    validates :nombre, :presence => true, presence: { message: "Este campo es obligatorio." }
+    validates :telefono, :presence => true, presence: { message: "Este campo es obligatorio."  }
+    validates :tipo, :presence => true, presence: { message: "Este campo es obligatorio."  }
+    validates :operacion, :presence => true, presence: { message: "Este campo es obligatorio."  }
+    validates :direccion, :presence => true, presence: { message: "Este campo es obligatorio."  }
 end
