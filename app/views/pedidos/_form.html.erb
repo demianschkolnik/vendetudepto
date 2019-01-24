@@ -31,22 +31,24 @@ wrapper_mappings: {
     
     <%= f.input :region, collection: [
       'I Región de Tarapacá'], label: 'Región', :required => true %>
-    
     <%= f.input :comuna, collection: ['Seleccione e'], label: 'Comuna', :required => true %>
-    <%= f.input :superficie, placeholder: 'Superficie total aprox.' %>
-    <%= f.input :sup_util, placeholder: 'Superficie util aprox.', help: 'Terreno utilizado o a utilizar por construcción.', label: "Superficie útil" %>
-    
-    
-    <%= f.input :dorms , label: 'Dormitorios', collection: 0 .. 10 , wrapper_html: { class: 'hide' },  style: "#{'display:none' if '#pedido_tipo' == "Estacionamiento"}"%>
 
+    <%= f.input :superficie, placeholder: 'Superficie total aprox.', label: 'Superficie total' %>
+    <%= f.input :sup_util, placeholder: 'Superficie util aprox.', label: "Superficie útil" %>
+    <%= f.input :terreno, label: 'Superficie del terreno'%>
+    <%= f.input :constr, label: 'Superficie construida'%>
 
-
-
+    <%= f.input :dorms , label: 'Dormitorios', collection: 0 .. 10 %>
     <%= f.input :bano, label: 'Baños', collection: 0 .. 10 %>
     <%= f.input :estacionamiento , label: 'Estacionamientos', collection: 0 .. 10%>
-    <%= f.input :anio, label: 'Año', collection: 1950 .. Time.current.year , :required => true %>
-    <%= f.input :piso, label: 'Cantidad de Pisos', hint: 'En caso de ser un departamento u oficina ingresar el piso en el que se encuentra', collection: ['1'] %>
-    
+    <%= f.input :anio, label: 'Año', collection: 1950 .. Time.current.year %>
+    <%= f.input :num_piso, label: 'Cantidad de Pisos' %>
+    <%= f.input :piso, label: 'Piso en el que se encuentra'%>
+    <%= f.input :privado, label: 'Privado(s)'%>
+    <%= f.input :orientacion , label: 'Orientacion', collection: ['Norte', 'Sur', 'Este', 'Oeste'], as: :radio_buttons %>
+    <%= f.input :descripcion, as: :text, placeholder: 'Datos adicionales que desee agregar sobre su propiedad' %>
+
+
     <script type="text/javascript">
     $('#pedido_tipo').on('change',function(){
         if ($('#pedido_tipo').val() == 'Terreno'){
@@ -56,6 +58,7 @@ wrapper_mappings: {
             $('.pedido_dorms').hide();
             $('.pedido_orientacion').hide();
             $('.pedido_anio').hide();
+            $('.pedido_num_piso').hide();
           }
         else if ($('#pedido_tipo').val() == 'Estacionamiento'){
           $('.pedido_superficie').hide();
@@ -66,12 +69,28 @@ wrapper_mappings: {
           $('.pedido_piso').hide();
           $('.pedido_orientacion').hide();
           $('.pedido_anio').hide();
+          $('.pedido_constr').hide();
+          $('.pedido_terreno').hide();
+          $('.pedido_num_piso').hide();
+
           }
         else if ($('#pedido_tipo').val() == 'Oficina'){
             $('.pedido_dorms').hide();
+            $('.pedido_constr').hide();
+            $('.pedido_terreno').hide();
+            $('.pedido_num_piso').hide();
           }
         else if ($('#pedido_tipo').val() == 'Parcela'){
             $('.pedido_estacionamiento').hide();
+            $('.pedido_orientacion').hide();
+            $('.pedido_constr').hide();
+            $('.pedido_terreno').hide();
+            $('.pedido_num_piso').hide();
+        }
+        else if($('#pedido_tipo').val() == 'Casa'){
+            $('.pedido_estacionamiento').hide();
+            $('.pedido_orientacion').hide();
+            $('.pedido_piso').hide();
         }
         else{
           $('.pedido_estacionamiento').show()
@@ -85,8 +104,7 @@ wrapper_mappings: {
     </script>
     
     
-    <%= f.input :orientacion , label: 'Orientacion', collection: ['Norte', 'Sur', 'Este', 'Oeste'], as: :radio_buttons %>
-    <%= f.input :descripcion, as: :text, placeholder: 'Datos adicionales que desee agregar sobre su propiedad' %>
+    
   </div>
 
   <div class="form-actions">
