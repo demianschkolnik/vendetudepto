@@ -26,3 +26,12 @@
 //= require tooltip_controller
 //= require rails.validations
 //= require rails.validations.simple_form.bootstrap4
+
+window.ClientSideValidations.callbacks.element.fail = function(element, message, callback){
+    $('.submit').prop("disabled",true);
+    callback();
+};
+window.ClientSideValidations.callbacks.element.pass = function(element, callback){
+    $('.submit').prop("disabled",false);
+    callback();
+};
