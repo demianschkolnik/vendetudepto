@@ -19,7 +19,7 @@ wrapper_mappings: {
   <div class="form-group">
     <%= f.input :nombre, label: 'Nombre', :required => true %>
     <%= f.input :mail, label: 'Correo', placeholder: 'nombre@dominio.com', :required => true %>
-    <%= f.input validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i %>
+    <%= validates :mail, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i %>
     <%= f.input :telefono, label: 'Teléfono', placeholder: '+56912345678', :required => true %>
   </div> 
   <div class="form-group">
