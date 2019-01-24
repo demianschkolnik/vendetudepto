@@ -3,5 +3,7 @@ class Pedido < ApplicationRecord
         :presence => true,
         :format => { :with => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/ ,
                      :message => 'Invalid e-mail! Please provide a valid e-mail address'},
-        :on => :creates
+    validates :nombre, :presence => true
+    validates :telefono, :presence => true
+    
 end
