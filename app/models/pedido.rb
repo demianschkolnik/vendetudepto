@@ -7,6 +7,7 @@ class Pedido < ApplicationRecord
     validates :nombre, :presence => true, presence: { message: "Este campo es obligatorio." }
     validates :telefono, :presence => true, presence: { message: "Este campo es obligatorio."  }
     validates :tipo, :presence => true, presence: { message: "Este campo es obligatorio."  }
-    validates :operacion, :presence => true, presence: { message: "Este campo es obligatorio."  }
+    validates :operacion, :presence => true, presence: { message: "Este campo es obligatorio."  }, on: :create
     validates :direccion, :presence => true, presence: { message: "Este campo es obligatorio."  }
 end
+

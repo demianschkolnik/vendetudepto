@@ -1,79 +1,33 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @pedido.nombre %>
-</p>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BullEstate | Real Estate Data Science</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="bulltheme">
 
-<p>
-  <strong>Mail:</strong>
-  <%= @pedido.mail %>
-</p>
+    <link rel="shortcut icon" href="images/favicon.ico"><!-- Favicon Icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"><!-- Google Fonts -->
+    <link rel="stylesheet" href="css/plugins.css"><!-- plugins Css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css"><!-- Custom Css -->
 
-<p>
-  <strong>Telefono:</strong>
-  <%= @pedido.telefono %>
-</p>
+    <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= @pedido.descripcion %>
-</p>
 
-<p>
-  <strong>Tipo:</strong>
-  <%= @pedido.tipo %>
-</p>
+    <%= stylesheet_link_tag "helper" %>
+    <%= stylesheet_link_tag "fonts-icons" %>
 
-<p>
-  <strong>Operacion:</strong>
-  <%= @pedido.operacion %>
-</p>
-
-<p>
-  <strong>Region:</strong>
-  <%= @pedido.region %>
-</p>
-
-<p>
-  <strong>Comuna:</strong>
-  <%= @pedido.comuna %>
-</p>
-
-<p>
-  <strong>Direccion:</strong>
-  <%= @pedido.direccion %>
-</p>
-
-<p>
-  <strong>Superficie:</strong>
-  <%= @pedido.superficie %>
-</p>
-
-<p>
-  <strong>Dorms:</strong>
-  <%= @pedido.dorms %>
-</p>
-
-<p>
-  <strong>Bano:</strong>
-  <%= @pedido.bano %>
-</p>
-
-<p>
-  <strong>Estacionamiento:</strong>
-  <%= @pedido.estacionamiento %>
-</p>
-
-<p>
-  <strong>Anio:</strong>
-  <%= @pedido.anio %>
-</p>
-
-<p>
-  <strong>Piso:</strong>
-  <%= @pedido.piso %>
-</p>
-
-<%= link_to 'Edit', edit_pedido_path(@pedido) %> |
-<%= link_to 'Back', pedidos_path %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+    <body>
+        <div class="container"
+            <p>
+            <strong>Su tasación fue realizada con éxito. Ésta fue enviada a <%= @pedido.mail %></strong>
+            <h5> Cualquier consulta no dudes en enviarla a : blabla<h5>
+            </p>
+        </div>
+    </body>
+</html>
