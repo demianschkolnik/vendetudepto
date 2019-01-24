@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "region"
     t.string "comuna"
     t.string "direccion", null: false
-    t.integer "superficie", null: false
-    t.integer "dorms", null: false
-    t.integer "bano", null: false
+    t.bigint "superficie"
+    t.integer "dorms"
+    t.integer "bano"
     t.integer "estacionamiento"
     t.integer "anio"
     t.integer "piso"
