@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "pedidos", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "nombre", null: false
     t.string "mail", null: false
-    t.string "telefono", limit: 11
+    t.string "telefono", limit: 20
     t.string "descripcion"
     t.string "tipo", null: false
     t.string "operacion", null: false
