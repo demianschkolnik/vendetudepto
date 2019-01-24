@@ -21,6 +21,16 @@ class PedidosController < ApplicationController
   def edit
   end
 
+  def validate
+    event = Pedido.new(validate_params)
+    event.valid?
+    event_field = validate_params.keys.first.try(:to_sym)
+    validation_response = !event.errors.include?(event_field)
+    respond_to do |format|
+      format.json { render json: {field_name: event_field, valid: validation_response, message: event.errors[event_field]} }
+  end
+  
+  end
   # POST /pedidos
   # POST /pedidos.json
   def create
@@ -71,5 +81,8 @@ class PedidosController < ApplicationController
     def pedido_params
       params.require(:pedido).permit(:nombre, :mail, :telefono, :descripcion, :tipo, :operacion, :region, :comuna, :direccion, :superficie, :dorms, :bano, :estacionamiento, :anio, :piso, :sup_util)    end
 
+    def validate_params
+      params.permit(:nombre, :mail, :telefono)
+    end
   
 end

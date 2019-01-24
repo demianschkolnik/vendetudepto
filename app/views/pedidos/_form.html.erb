@@ -10,7 +10,7 @@ wrapper_mappings: {
   radio_buttons: :horizontal_collection,
   range:         :horizontal_range,
   time:          :horizontal_multi_select
-}) do |f| %>
+}, html: {class: 'js_inline_validate'}, data: {validate_url: validate_events_path}) do |f| %>
   
     
   <%= f.error_notification %>
@@ -18,8 +18,8 @@ wrapper_mappings: {
 
   <div class="form-group">
     <%= f.input :nombre, label: 'Nombre', :required => true %>
-    <%= f.input :mail, label: 'Correo', placeholder: 'nombre@dominio.com', :required => true %>
-    <%= validates :mail, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i %>
+    <%= f.input :mail, label: 'Correo', placeholder: 'nombre@dominio.com', :required => true, class: 'js_validate_me js_event_mail' %>
+   
     <%= f.input :telefono, label: 'Teléfono', placeholder: '+56912345678', :required => true %>
   </div> 
   <div class="form-group">
