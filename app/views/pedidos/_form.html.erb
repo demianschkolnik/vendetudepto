@@ -59,6 +59,8 @@ wrapper_mappings: {
             $('.pedido_orientacion').hide();
             $('.pedido_anio').hide();
             $('.pedido_num_piso').hide();
+            $('.pedido_privado').hide();
+         
           }
         else if ($('#pedido_tipo').val() == 'Estacionamiento'){
           $('.pedido_superficie').hide();
@@ -72,6 +74,8 @@ wrapper_mappings: {
           $('.pedido_constr').hide();
           $('.pedido_terreno').hide();
           $('.pedido_num_piso').hide();
+          $('.pedido_privado').hide();
+         
 
           }
         else if ($('#pedido_tipo').val() == 'Oficina'){
@@ -86,11 +90,15 @@ wrapper_mappings: {
             $('.pedido_constr').hide();
             $('.pedido_terreno').hide();
             $('.pedido_num_piso').hide();
+            $('.pedido_privado').hide();
+         
         }
         else if($('#pedido_tipo').val() == 'Casa'){
             $('.pedido_estacionamiento').hide();
             $('.pedido_orientacion').hide();
             $('.pedido_piso').hide();
+            $('.pedido_privado').hide();
+         
         }
         else{
           $('.pedido_estacionamiento').show()
@@ -100,6 +108,8 @@ wrapper_mappings: {
           $('.pedido_num_piso').hide();
           $('.pedido_constr').hide();
           $('.pedido_terreno').hide();
+          $('.pedido_privado').hide();
+         
 
         }
        
