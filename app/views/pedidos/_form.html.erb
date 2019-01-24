@@ -52,14 +52,18 @@ wrapper_mappings: {
     <script type="text/javascript">
     $('#pedido_tipo').on('change',function(){
         if ($('#pedido_tipo').val() == 'Terreno'){
-            $('.pedido_bano').hide();
-            $('.pedido_estacionamiento').hide();
-            $('.pedido_piso').hide();
-            $('.pedido_dorms').hide();
-            $('.pedido_orientacion').hide();
-            $('.pedido_anio').hide();
-            $('.pedido_num_piso').hide();
-            $('.pedido_privado').hide();
+          $('.pedido_superficie').hide();
+          $('.pedido_sup_util').hide();
+          $('.pedido_estacionamiento').hide();
+          $('.pedido_dorms').hide();
+          $('.pedido_bano').hide();
+          $('.pedido_piso').hide();
+          $('.pedido_orientacion').hide();
+          $('.pedido_anio').hide();
+          $('.pedido_constr').hide();
+          $('.pedido_terreno').show();
+          $('.pedido_num_piso').hide();
+          $('.pedido_privado').hide();
          
           }
         else if ($('#pedido_tipo').val() == 'Estacionamiento'){
@@ -75,42 +79,63 @@ wrapper_mappings: {
           $('.pedido_terreno').hide();
           $('.pedido_num_piso').hide();
           $('.pedido_privado').hide();
-         
-
+        
           }
         else if ($('#pedido_tipo').val() == 'Oficina'){
-            $('.pedido_dorms').hide();
-            $('.pedido_constr').hide();
-            $('.pedido_terreno').hide();
-            $('.pedido_num_piso').hide();
+          $('.pedido_superficie').show();
+          $('.pedido_sup_util').show();
+          $('.pedido_estacionamiento').show();
+          $('.pedido_dorms').hide();
+          $('.pedido_bano').show();
+          $('.pedido_piso').show();
+          $('.pedido_orientacion').show();
+          $('.pedido_anio').show();
+          $('.pedido_constr').hide();
+          $('.pedido_terreno').hide();
+          $('.pedido_num_piso').hide();
+          $('.pedido_privado').show();
           }
         else if ($('#pedido_tipo').val() == 'Parcela'){
-            $('.pedido_estacionamiento').hide();
-            $('.pedido_orientacion').hide();
-            $('.pedido_constr').hide();
-            $('.pedido_terreno').hide();
-            $('.pedido_num_piso').hide();
-            $('.pedido_privado').hide();
-         
+          $('.pedido_superficie').show();
+          $('.pedido_sup_util').hide();
+          $('.pedido_estacionamiento').hide();
+          $('.pedido_dorms').show();
+          $('.pedido_bano').show();
+          $('.pedido_piso').hide();
+          $('.pedido_orientacion').hide();
+          $('.pedido_anio').hide();
+          $('.pedido_constr').show();
+          $('.pedido_terreno').hide();
+          $('.pedido_num_piso').show();
+          $('.pedido_privado').hide();
         }
         else if($('#pedido_tipo').val() == 'Casa'){
-            $('.pedido_estacionamiento').hide();
-            $('.pedido_orientacion').hide();
-            $('.pedido_piso').hide();
-            $('.pedido_privado').hide();
-         
+          $('.pedido_superficie').hide();
+          $('.pedido_sup_util').hide();
+          $('.pedido_estacionamiento').hide();
+          $('.pedido_dorms').show();
+          $('.pedido_bano').show();
+          $('.pedido_piso').hide();
+          $('.pedido_orientacion').hide();
+          $('.pedido_anio').show();
+          $('.pedido_constr').show();
+          $('.pedido_terreno').show();
+          $('.pedido_num_piso').show();
+          $('.pedido_privado').hide();
         }
         else{
-          $('.pedido_estacionamiento').show()
+          $('.pedido_superficie').show();
+          $('.pedido_sup_util').show();
+          $('.pedido_estacionamiento').show();
           $('.pedido_dorms').show();
           $('.pedido_bano').show();
           $('.pedido_piso').show();
-          $('.pedido_num_piso').hide();
+          $('.pedido_orientacion').show();
+          $('.pedido_anio').show();
           $('.pedido_constr').hide();
           $('.pedido_terreno').hide();
+          $('.pedido_num_piso').hide();
           $('.pedido_privado').hide();
-         
-
         }
        
     });    
