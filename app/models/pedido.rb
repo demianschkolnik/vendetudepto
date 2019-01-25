@@ -14,7 +14,16 @@ class Pedido < ApplicationRecord
     validates :direccion, :presence => true, presence: { message: "Este campo es obligatorio."  }, 
                         :format => { :with => /[a-zA-Z0-9]{5,}/ ,
                         :message => 'Solamente números y letras están permitidas.'}
-   
+                        
+    validates :sup_util,  presence: { if: :relacion?, message: 'Superficie útil no puede ser mayor a la total.' }
+
+ def relacion?
+    sup_util <= superficie
+end
+                          
+
+
+                       
 
 
 end
