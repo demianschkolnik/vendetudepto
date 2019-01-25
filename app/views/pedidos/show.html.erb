@@ -89,15 +89,40 @@
             <button type="button" class="btn btn-black btn-block w-100 fr-offcanvas-close js-fr-offcanvas-close fr-offcanvas-close-btn"><span class="ti-close mr-2"></span>Cerrar</button>
             <div class="row text-center mb-30">
                 <div class="col-lg-12">
-                    <h2 class="text-black fw-3">Su tasación fue realizada con éxito. Ésta fue enviada a <%= @pedido.mail %></h2>
+                    <h2 class="text-black fw-3"> Ésta fue enviada a <%= @pedido.mail %></h2>
                     <h5> Cualquier consulta no dudes en enviarla a : blabla<h5>
                 </div>
             </div>
         </div>
         <!-- End offcanvas -->
     </header>
-            
-        <!-- Start Footer
+    <!-- Start Home
+    ================================================== -->        
+    <section id="home" class="d-flex align-items-center section text-white full-home" data-parallax data-speed="0" data-src=<%= image_path("bg4.jpg") %> >
+        <div class="overlay-gridtile-black"></div>
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-8 text-center">
+                    <h1 class="text-uppercase mb-0 fw-7 text-white font-50 font-sm-80 font-md-100 font-lg-100">BullEstate</h1>
+                    <h5 class="fw-4"><strong>Su tasación fue realizada con éxito.></h5>
+                    <h5 class="fw-4"><strong>Ésta fue enviada a <%= @pedido.mail %></h5>
+                    <h5 class="fw-4"><strong>Cualquier consulta no dudes en enviarla a : blabla></h5>
+
+                    
+                    <a href="#comprar" class="btn btn-blue ml-1 mr-1 mt-4 page-scroll">Volver</a>
+                    
+                </div>
+            </div>
+        </div>
+        <a href="#services" class="home-scroller page-scroll text-white">
+            <span class="ti-mouse"></span>
+        </a>
+    </section>
+    <!-- End Home
+    ================================================== -->   
+    
+    
+    <!-- Start Footer
         ================================================== -->
         <footer class="section bg-black text-white">
             <div class="container">

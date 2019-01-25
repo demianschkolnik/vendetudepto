@@ -12,7 +12,7 @@ class Pedido < ApplicationRecord
     validates :tipo, :presence => true, presence: { message: "Este campo es obligatorio."  }
     validates :operacion, :presence => true, presence: { message: "Este campo es obligatorio."  }, on: :create
     validates :direccion, :presence => true, presence: { message: "Este campo es obligatorio."  }, 
-                        :format => { :with => /^[a-zA-Z0-9]{5,}$/ ,
+                        :format => { :with => /[a-zA-Z0-9]{5,}/ ,
                         :message => 'Solamente números y letras están permitidas.'}
     validates :sup_util, if: :relacion?
 
