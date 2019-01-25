@@ -34,19 +34,19 @@ wrapper_mappings: {
       'I Región de Tarapacá'], label: 'Región', :required => true %>
     <%= f.input :comuna, collection: ['Seleccione e'], label: 'Comuna', :required => true %>
 
-    <%= f.input :superficie, placeholder: 'Superficie total aprox.', label: 'Superficie total' %>
+    <%= f.input :superficie, placeholder: 'Superficie total aprox.', label: 'Superficie total'%>
     <%= f.input :sup_util, placeholder: 'Superficie util aprox.', label: "Superficie útil" %>
     <%= f.input :terreno, label: 'Superficie del terreno'%>
     <%= f.input :constr, label: 'Superficie construida'%>
 
-    <%= f.input :dorms , label: 'Dormitorios', collection: 0 .. 10 %>
-    <%= f.input :bano, label: 'Baños', collection: 0 .. 10 %>
+    <%= f.input :dorms , label: 'Dormitorios', collection: 0 .. 10, :input_html => { :value => 1 }%>
+    <%= f.input :bano, label: 'Baños', collection: 0 .. 10, :input_html => { :value => 1 } %>
     <%= f.input :estacionamiento , label: 'Estacionamientos', collection: 0 .. 10%>
     <%= f.input :anio, label: 'Año', collection: 1950 .. Time.current.year %>
-    <%= f.input :num_piso, label: 'Cantidad de Pisos' %>
+    <%= f.input :num_piso, label: 'Cantidad de Pisos', :input_html => { :value => 1 } %>
     <%= f.input :piso, label: 'Piso en el que se encuentra'%>
     <%= f.input :privado, label: 'Privado(s)'%>
-    <%= f.input :orientacion , label: 'Orientacion', collection: ['Norte', 'Sur', 'Este', 'Oeste'], as: :radio_buttons %>
+    <%= f.input :orientacion , label: 'Orientacion', collection: ['Norte', 'Sur', 'Este', 'Oeste'] %>
     <%= f.input :descripcion, as: :text, placeholder: 'Datos adicionales que desee agregar sobre su propiedad' %>
 
 
