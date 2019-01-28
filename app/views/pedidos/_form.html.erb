@@ -23,8 +23,7 @@ wrapper_mappings: {
     <%= f.input :telefono, label: 'Teléfono', placeholder: '+56912345678', :required => true %>
   </div> 
   <div class="form-group">
-  <br>
-  <h6 class="fw-6 text-black">Porfavor ingrese los datos sobre la propiedad a tasarl</h6>
+  <h6 class="fw-6 text-black">Porfavor ingrese los datos sobre la propiedad a tasar:</h6>
  
     <%= f.input :tipo, collection: ['Departamento','Casa','Oficina', 'Terreno', 'Parcela', 'Estacionamiento'], :required => true %>
     <%= f.input :operacion, label: 'Operación', as: :radio_buttons, wrapper: :vertical_collection_inline, collection: ['Venta', 'Arriendo'], placeholder: 'Seleccione accion que desea realizar con la propiedad', :required => true %>
