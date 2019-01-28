@@ -48,17 +48,7 @@ wrapper_mappings: {
     <%= f.input :privado, label: 'Privado(s)'%>
     <%= f.input :orientacion , label: 'Orientacion', collection: ['Norte', 'Sur', 'Este', 'Oeste'] %>
     <%= f.input :descripcion, as: :text, placeholder: 'Datos adicionales que desee agregar sobre su propiedad' %>
-    <form id="property">
-    <div class="form-group">
-      <input type="text" name="name" class="form-control" id="address" placeholder="Address">
-    </div>
-    <div class="form-group">
-      <input type="text" name="lat" class="form-control" placeholder="Latitude" readonly>
-    </div>
-    <div class="form-group">
-      <input type="text" name="lng" class="form-control" placeholder="Longitude" readonly>
-    </div>
-
+   
     <script type="text/javascript">
     $('#pedido_tipo').on('change',function(){
         if ($('#pedido_tipo').val() == 'Terreno'){
@@ -151,15 +141,12 @@ wrapper_mappings: {
     });    
   
     </script>
-    
-    
-    
+        
   </div>
 
   <div class="form-actions">
     <%= f.button :submit, 'Tasar', class: 'btn btn-success' %>
   </div>
-
   
 <% end %> 
 
