@@ -36,8 +36,8 @@ wrapper_mappings: {
 
     <%= f.input :superficie, placeholder: 'Superficie total aprox.', label: 'Superficie total'%>
     <%= f.input :sup_util, placeholder: 'Superficie util aprox.', label: "Superficie útil" %>
-    <%= f.input :terreno, label: 'Superficie del terreno'%>
-    <%= f.input :constr, label: 'Superficie construida'%>
+    <%= f.input :terreno, label: 'Superficie del terreno', hint: 'Metros cuadrados' %>
+    <%= f.input :constr, label: 'Superficie construida', hint: 'Metros cuadrados'%>
 
     <%= f.input :dorms , label: 'Dormitorios', collection: 0 .. 10, :input_html => { :value => 1 }%>
     <%= f.input :bano, label: 'Baños', collection: 0 .. 10, :input_html => { :value => 1 } %>

@@ -3,7 +3,7 @@ class Pedido < ApplicationRecord
         :presence => true, presence: { message: "Este campo es obligatorio." },
         :format => { :with => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/ ,
                      :message => 'Correo inválido! Porfavor ingresar correo correctamente'},
-        uniqueness: true
+        uniqueness: {message: "already subscribed"}
         
     validates :nombre, :presence => true, presence: { message: "Este campo es obligatorio." }
     validates :telefono, :presence => true, presence: { message: "Este campo es obligatorio."  },
@@ -15,12 +15,7 @@ class Pedido < ApplicationRecord
                         :format => { :with => /[a-zA-Z0-9]{5,}/ ,
                         :message => 'Solamente números y letras están permitidas.'}
                         
-    validates :sup_util,  presence: { if: :relacion?, message: 'Superficie útil no puede ser mayor a la total.' }
-
- def relacion?
-    sup_util <= superficie
-end
-                          
+                     
 
 
                        
