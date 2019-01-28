@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'pedidos#index'
  
-  get 'pedidos', to: 'pedidos#show', as: 
+  get '/pedidos', to: 'pedidos#show', as: 
   resources :pedidos do
     collection { post :validate }
   end
