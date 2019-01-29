@@ -159,7 +159,14 @@ wrapper_mappings: {
 <div class="form-group">
   <input type="text" name="lng" class="form-control" placeholder="Longitude" readonly>
 </div>
-
+<script type="text/javascript">
+$(document).ready(function(){
+    // Call Geo Complete
+    $("#address").geocomplete({details:"form#property"});
+  });
+</script>
+        
+  
 </form>
 
 </div>
