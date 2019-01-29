@@ -17,7 +17,10 @@ class Pedido < ApplicationRecord
                         :message => 'Solamente números y letras están permitidas.'}
     validates :region, :presence => true, if: -> { :region != 'Seleccione región' }
                         
-                     
+    before_save do 
+        self orientacion.gsub!(/[\[\]\"]/"") if attribute_present?("orientacion")
+    end
+
 
 
                        
