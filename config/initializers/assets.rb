@@ -21,4 +21,6 @@ Rails.application.config.assets.precompile += %w( helper.css )
 Rails.application.config.assets.precompile += %w( fonts-icons.css )
 Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf|otf|woff2)\z/
 Rails.application.config.assets.precompile += %w( inline_validations.js.coffee )
+Rails.application.config.assets.precompile += %w( jquery.geocomplete.js )
+Rails.application.config.assets.precompile += %w( jquery.geocomplete.min.js )
 Rails.application.config.assets.precompile += %w( direccion.js )
