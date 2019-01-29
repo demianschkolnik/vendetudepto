@@ -15,6 +15,7 @@ class Pedido < ApplicationRecord
     validates :direccion, :presence => true, presence: { message: "Este campo es obligatorio."  }, 
                         :format => { :with => /[a-zA-Z0-9]{5,}/ ,
                         :message => 'Solamente números y letras están permitidas.'}
+    validates :region, :presence => true, if: -> { :region != 'sin-region' }
                         
                      
 
