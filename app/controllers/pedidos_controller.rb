@@ -42,7 +42,7 @@ class PedidosController < ApplicationController
         format.html { redirect_to @pedido, notice: 'Tasación realizada con éxito.' }
         format.json { render :index, status: :created, location: @pedido }
       else
-        format.html { render :new }
+        format.html { render :index }
         format.json { render json: @pedido.errors, status: :unprocessable_entity }
       end
     end
