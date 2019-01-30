@@ -10,7 +10,7 @@ wrapper_mappings: {
   radio_buttons: :horizontal_collection,
   range:         :horizontal_range,
   time:          :horizontal_multi_select
-}, validate: true, input_html => { :property }) do |f| %>
+}, validate: true) do |f| %>
   
     
   <%= f.error_notification %>
@@ -168,7 +168,7 @@ wrapper_mappings: {
 <script type="text/javascript">
 $(document).ready(function(){
     // Call Geo Complete
-    $("#address").geocomplete({details:"form#property"});
+    $("#address").geocomplete({details:"form"});
   });
 </script> 
 
