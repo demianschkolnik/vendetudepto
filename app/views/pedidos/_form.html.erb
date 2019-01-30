@@ -10,7 +10,7 @@ wrapper_mappings: {
   radio_buttons: :horizontal_collection,
   range:         :horizontal_range,
   time:          :horizontal_multi_select
-}, validate: true, html: { :property }) do |f| %>
+}, validate: true) do |f| %>
   
     
   <%= f.error_notification %>
@@ -27,10 +27,7 @@ wrapper_mappings: {
   <br>
     <%= f.input :tipo, collection: ['Departamento','Casa','Oficina', 'Terreno', 'Parcela', 'Estacionamiento'], :required => true %>
     <%= f.input :operacion, label: 'Operación', as: :radio_buttons, wrapper: :vertical_collection_inline, collection: ['Venta', 'Arriendo'], placeholder: 'Seleccione accion que desea realizar con la propiedad', :required => true %>
-    <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.', :required => true, :input_html => {:id => "address" } %>  
-    <%= f.input :latitud, :as => :hidden, :input_html => {name: 'lat'} %>
-    <%= f.input :longitud, :as => :hidden, :input_html => {name: 'lng'} %>
-
+    <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.', :required => true %>  
     
     <%= f.input :region, collection: [
       'I Región de Tarapacá'], label: 'Región' %>
@@ -152,7 +149,7 @@ wrapper_mappings: {
   
 <% end %> 
 
-<-- <form id="property">
+<form id="property">
 <div class="form-group">
   <input type="text" name="name" class="form-control" id="address" placeholder="Address">
 </div>
@@ -161,7 +158,7 @@ wrapper_mappings: {
 </div>
 <div class="form-group">
   <input type="text" name="lng" class="form-control" placeholder="Longitude" readonly>
-</div> -->
+</div>
 
 <script type="text/javascript">
 $(document).ready(function(){
