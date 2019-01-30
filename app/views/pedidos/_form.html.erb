@@ -27,11 +27,9 @@ wrapper_mappings: {
   <br>
     <%= f.input :tipo, collection: ['Departamento','Casa','Oficina', 'Terreno', 'Parcela', 'Estacionamiento'], :required => true %>
     <%= f.input :operacion, label: 'Operación', as: :radio_buttons, wrapper: :vertical_collection_inline, collection: ['Venta', 'Arriendo'], placeholder: 'Seleccione accion que desea realizar con la propiedad', :required => true %>
-   
-   
-    <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.', :required => true, :input_html => {id: "address", name: 'formatted_address', value:'' } %>  
-    <%= f.input :latitud, :input_html => {name: 'lat', id: 'lat', value: ''} %>
-    <%= f.input :longitud, :input_html => {name: 'lng', id:'lng', value: ''} %>
+    <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.', :required => true, :input_html => {id: "address", name: 'address' } %>  
+    <%= f.input :latitud, :input_html => {name: 'lat', id: 'lat'} %>
+    <%= f.input :longitud, :input_html => {name: 'lng', id:'lng4'} %>
 
     
     <%= f.input :region, collection: [
@@ -157,7 +155,7 @@ wrapper_mappings: {
 <script type="text/javascript">
 $(document).ready(function(){
     // Call Geo Complete
-    $("input").geocomplete({details:"form#new_pedido"});
+    $("#address").geocomplete({details:"form#new_pedido"});
   });
 </script> 
 
