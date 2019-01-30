@@ -147,7 +147,7 @@ wrapper_mappings: {
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, 'Tasar', class: 'btn btn-success' %>
+    <%= f.button :submit, 'Tasar', class: 'btn btn-primary' %>
   </div>
   
 <% end %> 
@@ -155,7 +155,7 @@ wrapper_mappings: {
 <script type="text/javascript">
 $(document).ready(function(){
     // Call Geo Complete
-    $("#address").geocomplete({details:"form"});
+    $("#address").geocomplete({details:"form#new_pedido"});
   });
 </script> 
 
