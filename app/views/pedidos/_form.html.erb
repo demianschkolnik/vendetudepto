@@ -10,7 +10,7 @@ wrapper_mappings: {
   radio_buttons: :horizontal_collection,
   range:         :horizontal_range,
   time:          :horizontal_multi_select
-}, validate: true, html: { :property }) do |f| %>
+}, validate: true, input_html: { :property }) do |f| %>
   
     
   <%= f.error_notification %>
