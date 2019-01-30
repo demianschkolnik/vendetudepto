@@ -80,7 +80,32 @@ class PedidosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pedido_params
-      params.require(:pedido).permit(:nombre, :mail, :telefono, :descripcion, :tipo, :operacion, :region, :comuna, :direccion, :superficie, :dorms, :bano, :estacionamiento, :anio, :latitud, :longitud, :norte, :sur, :este, :oeste, :sup_util)    
+      params.require(:pedido).permit(:nombre, 
+      :mail, 
+      :telefono, 
+      :descripcion, 
+      :tipo, 
+      :operacion, 
+      :region, 
+      :comuna, 
+      :direccion, 
+      :superficie, 
+      :dorms, 
+      :bano, 
+      :estacionamiento, 
+      :anio, 
+      :latitud, 
+      :longitud, 
+      :norte, 
+      :sur, 
+      :este, 
+      :oeste, 
+      :sup_util,
+      :terreno,
+      :privado,
+      :num_piso,
+      :constr)
+
     end
 
     def validate_params

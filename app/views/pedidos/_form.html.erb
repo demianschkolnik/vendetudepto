@@ -32,8 +32,6 @@ wrapper_mappings: {
     <%= f.input :longitud, :as => :hidden, :input_html => {name: 'lng'} %>
 
     
-
-
     <%= f.input :region, collection: [
       'I Región de Tarapacá'], label: 'Región' %>
     <%= f.input :comuna, collection: ['Seleccione e'], label: 'Comuna' %>
@@ -50,7 +48,7 @@ wrapper_mappings: {
     <%= f.input :num_piso, label: 'Cantidad de Pisos', :input_html => { :value => 1 } %>
     <%= f.input :piso, label: 'Piso en el que se encuentra'%>
     <%= f.input :privado, label: 'Privado(s)'%>
-    <%= f.input :orientacion , label: 'Orientacion', collection: ['Norte', 'Sur', 'Este', 'Oeste'], as: :check_boxes%>
+    <%= f.input :norte , label: 'Orientacion' %>
     <%= f.input :descripcion, as: :text, placeholder: 'Datos adicionales que desee agregar sobre su propiedad' %>
    
     <script type="text/javascript">
