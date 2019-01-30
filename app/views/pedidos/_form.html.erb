@@ -27,10 +27,14 @@ wrapper_mappings: {
   <br>
     <%= f.input :tipo, collection: ['Departamento','Casa','Oficina', 'Terreno', 'Parcela', 'Estacionamiento'], :required => true %>
     <%= f.input :operacion, label: 'Operación', as: :radio_buttons, wrapper: :vertical_collection_inline, collection: ['Venta', 'Arriendo'], placeholder: 'Seleccione accion que desea realizar con la propiedad', :required => true %>
+<<<<<<< HEAD
     <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.', :required => true%>  
     <%= f.input :latitud, :input_html => {name: 'lat', id: 'lat'} %>
     <%= f.input :longitud, :input_html => {name: 'lng', id:'lng'} %>
 
+=======
+    <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.', :required => true %>  
+>>>>>>> parent of 9463291... Update _form.html.erb
     
     <%= f.input :region, collection: [
       'I Región de Tarapacá'], label: 'Región' %>
@@ -152,6 +156,7 @@ wrapper_mappings: {
   
 <% end %> 
 
+<<<<<<< HEAD
 <form id="new_pedido1">
         <div class="form-group">
           <input type="text" name="name" class="form-control" id="address" placeholder="Address">
@@ -163,6 +168,19 @@ wrapper_mappings: {
           <input type="text" name="lng" class="form-control" placeholder="Longitude" readonly>
         </div>
       </form>
+=======
+<form id="property">
+<div class="form-group">
+  <input type="text" name="name" class="form-control" id="address" placeholder="Address">
+</div>
+<div class="form-group">
+  <input type="text" name="lat" class="form-control" placeholder="Latitude" readonly>
+</div>
+<div class="form-group">
+  <input type="text" name="lng" class="form-control" placeholder="Longitude" readonly>
+</div>
+
+>>>>>>> parent of 9463291... Update _form.html.erb
 <script type="text/javascript">
 $(document).ready(function(){
     // Call Geo Complete
