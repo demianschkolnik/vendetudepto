@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "anio"
     t.integer "piso"
     t.integer "sup_util"
-    t.integer "latitud"
-    t.integer "longitud"
+    t.string "latitud", limit: 25
+    t.string "longitud", limit: 25
     t.integer "num_piso"
     t.integer "constr"
     t.integer "terreno"
