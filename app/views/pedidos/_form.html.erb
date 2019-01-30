@@ -28,7 +28,7 @@ wrapper_mappings: {
     <%= f.input :tipo, collection: ['Departamento','Casa','Oficina', 'Terreno', 'Parcela', 'Estacionamiento'], :required => true %>
     <%= f.input :operacion, label: 'Operación', as: :radio_buttons, wrapper: :vertical_collection_inline, collection: ['Venta', 'Arriendo'], placeholder: 'Seleccione accion que desea realizar con la propiedad', :required => true %>
     <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.', :required => true, :input_html => {id: "address", name: 'address' } %>  
-    <%= f.input :latitud, :input_html => {name: 'lat', id: 'lat', :onchange => "readURL(this)"} %>
+    <%= f.input :latitud, :input_html => {name: 'lat', id: 'lat'} %>
     <%= f.input :longitud, :input_html => {name: 'lng', id:'lng4'} %>
 
     
@@ -151,21 +151,11 @@ wrapper_mappings: {
   </div>
   
 <% end %> 
-<form id="new_pedido1">
-        <div class="form-group">
-          <input type="text" name="name" class="form-control" id="address" placeholder="Address">
-        </div>
-        <div class="form-group">
-          <input type="text" name="lat" class="form-control" placeholder="Latitude" readonly>
-        </div>
-        <div class="form-group">
-          <input type="text" name="lng" class="form-control" placeholder="Longitude" readonly>
-        </div>
-      </form>
+
 <script type="text/javascript">
 $(document).ready(function(){
     // Call Geo Complete
-    $("#address").geocomplete({details:"form#new_pedido1"});
+    $("#address").geocomplete({details:"form#new_pedido"});
   });
 </script> 
 
