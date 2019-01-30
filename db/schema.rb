@@ -29,13 +29,16 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "anio"
     t.integer "piso"
     t.integer "sup_util"
-    t.integer "orientacion"
     t.integer "latitud"
     t.integer "longitud"
     t.integer "num_piso"
     t.integer "constr"
     t.integer "terreno"
     t.integer "privado"
+    t.integer "norte"
+    t.integer "sur"
+    t.integer "este"
+    t.integer "oeste"
   end
 
 end
