@@ -27,9 +27,13 @@ wrapper_mappings: {
   <br>
     <%= f.input :tipo, collection: ['Departamento','Casa','Oficina', 'Terreno', 'Parcela', 'Estacionamiento'], :required => true %>
     <%= f.input :operacion, label: 'Operación', as: :radio_buttons, wrapper: :vertical_collection_inline, collection: ['Venta', 'Arriendo'], placeholder: 'Seleccione accion que desea realizar con la propiedad', :required => true %>
-    <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.', :required => true, :input_html => { :id => 'address' } %>  
-    <%= f.input :latitud,  :input_html => { :name => 'lat'}, placeholder: "Latitude" %> 
-    <%= f.input :longitud, :input_html => { :name => 'lng'}, placeholder: "Longitude" %> 
+    <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.', :required => true, :input_html => { :id => 'address' } %> 
+    <div class="form-group">
+    <%= f.input :input_html => {type: "text", name: "lat", class:"form-control"} , placeholder:"Latitude" %>
+</div>
+    
+
+
 
     <%= f.input :region, collection: [
       'I Región de Tarapacá'], label: 'Región', :required => true %>
@@ -151,14 +155,10 @@ wrapper_mappings: {
   
 <% end %> 
 
-<form id="property">
 
 
 <div class="form-group">
-  <input type="text" name="lat" class="form-control" placeholder="Latitude" readonly>
-</div>
-<div class="form-group">
-  <input type="text" name="lng" class="form-control" placeholder="Longitude" readonly>
+  <input type="hidden" name="lng" class="form-control" placeholder="Longitude" readonly>
 </div>
 
 <script type="text/javascript">
