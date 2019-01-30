@@ -27,8 +27,10 @@ wrapper_mappings: {
   <br>
     <%= f.input :tipo, collection: ['Departamento','Casa','Oficina', 'Terreno', 'Parcela', 'Estacionamiento'], :required => true %>
     <%= f.input :operacion, label: 'Operación', as: :radio_buttons, wrapper: :vertical_collection_inline, collection: ['Venta', 'Arriendo'], placeholder: 'Seleccione accion que desea realizar con la propiedad', :required => true %>
-    <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.', :required => true %>  
-    
+    <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.', :required => true, :input_html => { :id => 'address' } %>  
+    <%= f.input :latitud,  :input_html => { :name => 'lat' }%> 
+    <%= f.input :longitud, :input_html => { :name => 'lng' }%> 
+
     <%= f.input :region, collection: [
       'I Región de Tarapacá'], label: 'Región', :required => true %>
     <%= f.input :comuna, collection: ['Seleccione e'], label: 'Comuna', :required => true %>
@@ -163,7 +165,7 @@ wrapper_mappings: {
 <script type="text/javascript">
 $(document).ready(function(){
     // Call Geo Complete
-    $("#address").geocomplete({details:"form#property"});
+    $("#address").geocomplete({details:"form#new_pedido"});
   });
 </script> 
 
