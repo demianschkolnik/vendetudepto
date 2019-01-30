@@ -37,7 +37,7 @@ wrapper_mappings: {
         $('.pedido_latitud');
         $('.pedido_longitud')});    
   
-          </script>
+    </script>
 
 
     <%= f.input :region, collection: [
@@ -56,7 +56,11 @@ wrapper_mappings: {
     <%= f.input :num_piso, label: 'Cantidad de Pisos', :input_html => { :value => 1 } %>
     <%= f.input :piso, label: 'Piso en el que se encuentra'%>
     <%= f.input :privado, label: 'Privado(s)'%>
-    <%= f.input :norte , label: 'Orientacion' %>
+    <%= f.input :norte , label: 'Orientacion', as: :check_boxes %>
+    <%= f.input :sur , label: '', as: :check_boxes  %>
+    <%= f.input :oeste , label: '', as: :check_boxes  %>
+    <%= f.input :este , label: '' , as: :check_boxes %>
+
     <%= f.input :descripcion, as: :text, placeholder: 'Datos adicionales que desee agregar sobre su propiedad' %>
    
     <script type="text/javascript">
