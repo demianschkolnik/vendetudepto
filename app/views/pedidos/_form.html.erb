@@ -56,10 +56,10 @@ wrapper_mappings: {
     <%= f.input :num_piso, label: 'Cantidad de Pisos', :input_html => { :value => 1 } %>
     <%= f.input :piso, label: 'Piso en el que se encuentra'%>
     <%= f.input :privado, label: 'Privado(s)'%>
-    <%= f.input :norte , label: 'Orientacion', as: :check_boxes %>
-    <%= f.input :sur , label: '', as: :check_boxes  %>
-    <%= f.input :oeste , label: '', as: :check_boxes  %>
-    <%= f.input :este , label: '' , as: :check_boxes %>
+    <%= f.input :norte , label: 'Orientacion', as: :check_boxes, collection: ['Norte'] %>
+    <%= f.input :sur , label: '', as: :check_boxes, collection: ['Sur']  %>
+    <%= f.input :oeste , label: '', as: :check_boxes, collection: ['Oeste']  %>
+    <%= f.input :este , label: '' , as: :check_boxes, collection: ['Este'] %>
 
     <%= f.input :descripcion, as: :text, placeholder: 'Datos adicionales que desee agregar sobre su propiedad' %>
    
