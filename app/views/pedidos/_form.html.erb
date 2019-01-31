@@ -28,8 +28,8 @@ wrapper_mappings: {
     <%= f.input :tipo, collection: ['Departamento','Casa','Oficina', 'Terreno', 'Parcela', 'Estacionamiento'], :required => true %>
     <%= f.input :operacion, label: 'Operación', as: :radio_buttons, wrapper: :vertical_collection_inline, collection: ['Venta', 'Arriendo'], placeholder: 'Seleccione accion que desea realizar con la propiedad', :required => true %>
     <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.', :required => true, :input_html => { :id => 'address', name:"name" } %> 
-    <%= f.input :latitud,  :input_html => {name: "lat" }%>
-    <%= f.input :longitud,  :input_html => {name: "lng" }%>
+    <%= f.input :latitud, as: :hidden, :input_html => {name: "lat" }%>
+    <%= f.input :longitud, as: :hidden, :input_html => {name: "lng" }%>
     
     <%= f.input :activo, as: :hidden, :input_html => {value: 1 }%>
    
