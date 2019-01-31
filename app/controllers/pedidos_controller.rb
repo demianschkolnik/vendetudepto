@@ -10,7 +10,6 @@ class PedidosController < ApplicationController
   # GET /pedidos/1
   # GET /pedidos/1.json
   def show
-    
   end
 
   # GET /pedidos/new
@@ -41,6 +40,7 @@ class PedidosController < ApplicationController
       if @pedido.save
         format.html { redirect_to @pedido, notice: 'Tasación realizada con éxito.' }
         format.json { render :index, status: :created, location: @pedido }
+        
       else
         format.html { render :index }
         format.json { render json: @pedido.errors, status: :unprocessable_entity }
