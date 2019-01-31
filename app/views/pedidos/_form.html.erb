@@ -41,8 +41,8 @@ wrapper_mappings: {
 
 
     <%= f.input :region, collection: [
-      'I Región de Tarapacá'], label: 'Región' %>
-    <%= f.input :comuna, collection: ['Seleccione e'], label: 'Comuna' %>
+      'I Región de Tarapacá'], label: 'Región', :required => true %>
+    <%= f.input :comuna, collection: ['Seleccione e'], label: 'Comuna', :required => true %>
 
     <%= f.input :superficie, placeholder: 'Superficie total aprox.', label: 'Superficie total'%>
     <%= f.input :sup_util, placeholder: 'Superficie util aprox.', label: "Superficie útil" %>
@@ -56,10 +56,10 @@ wrapper_mappings: {
     <%= f.input :num_piso, label: 'Cantidad de Pisos', :input_html => { :value => 1 } %>
     <%= f.input :piso, label: 'Piso en el que se encuentra'%>
     <%= f.input :privado, label: 'Privado(s)'%>
-    <%= f.input :norte , label: 'Orientación', as: :check_boxes, collection: ['Norte'], :input_html => { :value => 1 } %>
-    <%= f.input :sur , label: '', as: :check_boxes, collection: ['Sur'], :input_html => { :value => 1 }  %>
-    <%= f.input :oeste , label: '', as: :check_boxes, collection: ['Oeste'], :input_html => { :value => 1 }  %>
-    <%= f.input :este , label: '' , as: :check_boxes, collection: ['Este'], :input_html => { :value => 1 } %>
+    <%= f.input :norte , label: 'Orientación', as: :check_boxes, collection: ['Norte'] %>
+    <%= f.input :sur , label: '', as: :check_boxes, collection: ['Sur']  %>
+    <%= f.input :oeste , label: '', as: :check_boxes, collection: ['Oeste']  %>
+    <%= f.input :este , label: '' , as: :check_boxes, collection: ['Este'] %>
 
     <%= f.input :descripcion, as: :text, placeholder: 'Datos adicionales que desee agregar sobre su propiedad' %>
    
