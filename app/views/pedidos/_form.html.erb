@@ -31,7 +31,7 @@ wrapper_mappings: {
     
     <%= f.input :latitud, :input_html => {name: 'lat', id: 'lat' }%>
     <%= f.input :longitud, :input_html => {name: 'lng', id: 'lng' }%>
-    
+    <%= f.input :activo, as: :hidden, :input_html => {value: 1 }%>
    
     <%= f.input :region, collection: [
       'I Región de Tarapacá'], label: 'Región' %>
