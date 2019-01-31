@@ -17,10 +17,5 @@ class Pedido < ApplicationRecord
                         
    
 
-
-
-                       
-
-
 end
 
