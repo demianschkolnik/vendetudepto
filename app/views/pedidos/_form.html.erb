@@ -28,7 +28,7 @@ wrapper_mappings: {
     <%= f.input :tipo, collection: ['Departamento','Casa','Oficina', 'Terreno', 'Parcela', 'Estacionamiento'], :required => true %>
     <%= f.input :operacion, label: 'Operación', as: :radio_buttons, wrapper: :vertical_collection_inline, collection: ['Venta', 'Arriendo'], placeholder: 'Seleccione accion que desea realizar con la propiedad', :required => true %>
     <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.', :required => true, :input_html => { :id => 'address' } %> 
-    <%= f.input :activo, as: :hidden, :input_html => { :value => 1 }%>
+    <%= f.input :activo, :input_html => { :value => 1 }%>
 
     <%= f.input :region, collection: [
       'I Región de Tarapacá'], label: 'Región', :required => true %>
@@ -39,17 +39,14 @@ wrapper_mappings: {
     <%= f.input :terreno, label: 'Superficie del terreno', hint: 'Metros cuadrados' %>
     <%= f.input :constr, label: 'Superficie construida', hint: 'Metros cuadrados'%>
 
-    <%= f.input :dorms , label: 'Dormitorios', collection: 0 .. 10, :input_html => { :value => 1 }%>
-    <%= f.input :bano, label: 'Baños', collection: 0 .. 10, :input_html => { :value => 1 } %>
+    <%= f.input :dorms , label: 'Dormitorios', collection: 1 .. 10, :input_html => { :value => 1 }%>
+    <%= f.input :bano, label: 'Baños', collection: 1 .. 10, :input_html => { :value => 1 } %>
     <%= f.input :estacionamiento , label: 'Estacionamientos', collection: 0 .. 10%>
     <%= f.input :anio, label: 'Año', collection: (1900 .. Time.current.year).to_a.reverse %>
     <%= f.input :num_piso, label: 'Cantidad de Pisos' %>
     <%= f.input :piso, label: 'Piso en el que se encuentra'%>
     <%= f.input :privado, label: 'Privado(s)'%>
-    <%= f.input :norte , label: 'Orientación', as: :check_boxes, collection: ['Norte'] %>
-    <%= f.input :sur , label: '', as: :check_boxes, collection: ['Sur']  %>
-    <%= f.input :oeste , label: '', as: :check_boxes, collection: ['Oeste']  %>
-    <%= f.input :este , label: '' , as: :check_boxes, collection: ['Este'] %>
+   
 
     <%= f.input :descripcion, as: :text, placeholder: 'Datos adicionales que desee agregar sobre su propiedad' %>
    
