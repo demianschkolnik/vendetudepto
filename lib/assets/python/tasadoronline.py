@@ -10,6 +10,7 @@ yesterday = datetime.now() - timedelta(days=3)
 yesterday=datetime.date(yesterday)
 import googleMapApi as gm
 import propManager as pm
+import sys
 
 
 
