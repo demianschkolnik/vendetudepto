@@ -1,5 +1,5 @@
 $(document).ready(function(){
     // Call Geo Complete
-    $("#address").geocomplete({details:"form#property"});
+    $("#address").geocomplete({details:"form#new_pedido"});
   });
   
