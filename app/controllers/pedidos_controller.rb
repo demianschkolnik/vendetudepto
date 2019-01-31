@@ -10,7 +10,7 @@ class PedidosController < ApplicationController
   # GET /pedidos/1
   # GET /pedidos/1.json
   def show
-    @pedidos = `python lib/assets/python/tasadoronline.py`
+    @pedidos = `python /lib/assets/python/tasadoronline.py`
   end
 
   # GET /pedidos/new
