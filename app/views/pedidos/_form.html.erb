@@ -41,7 +41,7 @@ wrapper_mappings: {
     <%= f.input :dorms , label: 'Dormitorios', collection: 0 .. 10, :input_html => { :value => 1 }%>
     <%= f.input :bano, label: 'Baños', collection: 0 .. 10, :input_html => { :value => 1 } %>
     <%= f.input :estacionamiento , label: 'Estacionamientos', collection: 0 .. 10%>
-    <%= f.input :anio, label: 'Año', collection: 1950 .. Time.current.year %>
+    <%= f.input :anio, label: 'Año', collection: (1900 .. Time.current.year).to_a.reverse %>
     <%= f.input :num_piso, label: 'Cantidad de Pisos', :input_html => { :value => 1 } %>
     <%= f.input :piso, label: 'Piso en el que se encuentra'%>
     <%= f.input :privado, label: 'Privado(s)'%>
