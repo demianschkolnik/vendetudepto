@@ -29,15 +29,7 @@ wrapper_mappings: {
     <%= f.input :operacion, label: 'Operación', as: :radio_buttons, wrapper: :vertical_collection_inline, collection: ['Venta', 'Arriendo'], placeholder: 'Seleccione accion que desea realizar con la propiedad', :required => true %>
     <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.', :required => true, :input_html => { :id => 'address' } %> 
     
-    <%= f.input :latitud, :input_html => {name: 'lat', id: 'lat' }%>
-    <%= f.input :longitud, :input_html => {name: 'lng', id: 'lng' }%>
     
-    <script type="text/javascript">
-    $('#pedido_direccion').on('change',function(){
-        $('.pedido_latitud');
-        $('.pedido_longitud')});    
-  
-    </script>
 
 
     <%= f.input :region, collection: [
@@ -163,20 +155,9 @@ wrapper_mappings: {
   </div>
   
 
-<script type="text/javascript">
-$(document).ready(function(){
-    // Call Geo Complete
-    $("#address").geocomplete({details:"form#new_pedido"});
-  });
-</script> 
+
 <% end %> 
 
 
 </div>
 
-<div class="form-group">
-  <input type="hidden" name="lat" class="form-control" placeholder="Latitude" >
-</div>
-<div class="form-group">
-  <input type="hidden" name="lng" class="form-control" placeholder="Longitude" readonly>
-</div>
