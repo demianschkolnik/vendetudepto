@@ -39,7 +39,7 @@ class PedidosController < ApplicationController
     respond_to do |format|
       if @pedido.save
         format.html { redirect_to @pedido, notice: 'Tasación realizada con éxito.' }
-        format.json { render :new, status: :created, location: @pedido }
+        format.json { render :index, status: :created, location: @pedido }
         
       else
         format.html { render :index }
@@ -62,16 +62,6 @@ class PedidosController < ApplicationController
     end
   end
 
-  # DELETE /pedidos/1
-  # DELETE /pedidos/1.json
-  def destroy
-    @pedido.destroy
-    respond_to do |format|
-      format.html { redirect_to pedidos_url, notice: 'Pedido was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pedido
@@ -80,29 +70,8 @@ class PedidosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pedido_params
-      params.require(:pedido).permit(:nombre, 
-      :mail, 
-      :telefono, 
-      :descripcion, 
-      :tipo, 
-      :operacion, 
-      :region, 
-      :comuna, 
-      :direccion, 
-      :superficie, 
-      :dorms, 
-      :bano, 
-      :estacionamiento, 
-      :anio, 
-      :norte, 
-      :sur, 
-      :este, 
-      :oeste, 
-      :sup_util,
-      :terreno,
-      :privado,
-      :num_piso,
-      :constr)
+      params.require(:pedido).permit(:nombre, :mail, :telefono, :descripcion, :tipo, :operacion, :region, :comuna, :direccion, :superficie, :dorms, :bano, :estacionamiento, :anio, 
+      :norte, :sur, :este, :oeste, :sup_util, :terreno, :privado, :num_piso, :constr)
 
     end
 
