@@ -28,7 +28,7 @@ wrapper_mappings: {
     <%= f.input :tipo, collection: ['Departamento','Casa','Oficina', 'Terreno', 'Parcela', 'Estacionamiento'], :required => true %>
     <%= f.input :operacion, label: 'Operación', as: :radio_buttons, wrapper: :vertical_collection_inline, collection: ['Venta', 'Arriendo'], placeholder: 'Seleccione accion que desea realizar con la propiedad', :required => true %>
     <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.', :required => true, :input_html => { :id => 'address' } %> 
-    <%= f.input :activo, :input_html => {value: 1 }%>
+    <%= f.input :activo, as: :hidden, :input_html => { :value => 1 }%>
 
     <%= f.input :region, collection: [
       'I Región de Tarapacá'], label: 'Región', :required => true %>
