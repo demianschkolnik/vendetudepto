@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "sur"
     t.integer "este"
     t.integer "oeste"
+    t.integer "activo"
   end
 
 end
