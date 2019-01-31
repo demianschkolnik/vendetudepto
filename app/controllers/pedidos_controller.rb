@@ -94,8 +94,6 @@ class PedidosController < ApplicationController
       :bano, 
       :estacionamiento, 
       :anio, 
-      :latitud, 
-      :longitud, 
       :norte, 
       :sur, 
       :este, 
