@@ -9,11 +9,7 @@ en:
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-<<<<<<< HEAD
       default_message: "Porfavor corregir errores señalados a continuación:"
-=======
-      default_message: "Porfavor "
->>>>>>> parent of 64c1879... Limpieza vistas
     # Examples
     # labels:
     #   defaults:
