@@ -42,7 +42,7 @@ class PedidosController < ApplicationController
         format.json { render :index, status: :created, location: @pedido }
         
       else
-        format.html { render :index }
+        format.html { render :new }
         format.json { render json: @pedido.errors, status: :unprocessable_entity }
       end
     end
