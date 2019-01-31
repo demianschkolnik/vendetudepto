@@ -29,7 +29,8 @@ wrapper_mappings: {
     <%= f.input :operacion, label: 'Operación', as: :radio_buttons, wrapper: :vertical_collection_inline, collection: ['Venta', 'Arriendo'], placeholder: 'Seleccione accion que desea realizar con la propiedad', :required => true %>
     <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.', :required => true, :input_html => { :id => 'address' } %> 
     
-    
+    <%= f.input :latitud, :input_html => {name: 'lat', id: 'lat' }%>
+    <%= f.input :longitud, :input_html => {name: 'lng', id: 'lng' }%>
     <%= f.input :activo, as: :hidden, :input_html => {value: 1 }%>
    
     <%= f.input :region, collection: [
@@ -168,7 +169,6 @@ wrapper_mappings: {
 <div class="form-group">
   <input type="text" name="lng" class="form-control" placeholder="Longitude" readonly>
 </div>
-
 <script type="text/javascript">
 
 $(document).ready(function(){
