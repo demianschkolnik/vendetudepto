@@ -10,7 +10,7 @@ class PedidosController < ApplicationController
   # GET /pedidos/1
   # GET /pedidos/1.json
   def show
-    @pedido= `python lib/assets/python/tasadoronline.py "#{pedido_params}"`
+    
   end
 
   # GET /pedidos/new
@@ -43,7 +43,7 @@ class PedidosController < ApplicationController
         format.json { render :index, status: :created, location: @pedido }
         
       else
-        format.html { render :show }
+        format.html { render :index }
         format.json { render json: @pedido.errors, status: :unprocessable_entity }
       end
     end
