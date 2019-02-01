@@ -14,9 +14,7 @@ class Pedido < ApplicationRecord
     validates :operacion, :presence => true, presence: { message: "Este campo es obligatorio."  }, on: :create
     validates :direccion, :presence => true, presence: { message: "Este campo es obligatorio."  }
     validates :region, :presence => true, if: -> { :region != 'Seleccione región' }
-    
-    validates :slug, uniqueness: true, presence: true,
-                 exclusion: {in: %w[signup login]}
+                        
     before_validation :generate_slug
 
     def to_param

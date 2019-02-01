@@ -80,7 +80,4 @@ class PedidosController < ApplicationController
       params.permit(:nombre, :mail, :telefono)
     end
   
-    def find_page
-      @pedido = Pedido.find_by_slug!(params[:id].split("/").last)
-    end
 end
