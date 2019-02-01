@@ -52,6 +52,7 @@ wrapper_mappings: {
    
     <script type="text/javascript">
     $('#pedido_tipo').on('change',function(){
+      console.log('#pedido_tipo').val())
         if ($('#pedido_tipo').val() == 'Terreno'){
           $('.pedido_superficie').hide();
           $('.pedido_sup_util').hide();
