@@ -15,15 +15,7 @@ class Pedido < ApplicationRecord
     validates :direccion, :presence => true, presence: { message: "Este campo es obligatorio."  }
     validates :region, :presence => true, if: -> { :region != 'Seleccione región' }
                         
-    before_validation :generate_slug
-
-    def to_param
-      slug # or "#{id}-#{name}".parameterize
-    end
-    
-    def generate_slug
-      self.slug ||= name.parameterize
-    end
+   
 
 
 
