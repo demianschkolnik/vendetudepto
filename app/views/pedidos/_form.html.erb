@@ -53,7 +53,7 @@ wrapper_mappings: {
     <script type="text/javascript">
     $('#pedido_tipo').on('change',function(){
       console.log($('#pedido_tipo').val())
-        if ($('#pedido_tipo').val() == 'Terreno'){
+        if ($('#pedido_tipo').val() == 'terreno'){
           $('.pedido_superficie').hide();
           $('.pedido_sup_util').hide();
           $('.pedido_estacionamiento').hide();
@@ -68,7 +68,7 @@ wrapper_mappings: {
           $('.pedido_privado').hide();
          
           }
-        else if ($('#pedido_tipo').val() == 'Estacionamiento'){
+        else if ($('#pedido_tipo').val() == 'estacionamiento'){
           $('.pedido_superficie').hide();
           $('.pedido_sup_util').hide();
           $('.pedido_estacionamiento').hide();
@@ -83,7 +83,7 @@ wrapper_mappings: {
           $('.pedido_privado').hide();
         
           }
-        else if ($('#pedido_tipo').val() == 'Oficina'){
+        else if ($('#pedido_tipo').val() == 'oficina'){
           $('.pedido_superficie').show();
           $('.pedido_sup_util').show();
           $('.pedido_estacionamiento').show();
@@ -111,7 +111,7 @@ wrapper_mappings: {
           $('.pedido_num_piso').show();
           $('.pedido_privado').hide();
         }
-        else if($('#pedido_tipo').val() == 'Casa'){
+        else if($('#pedido_tipo').val() == 'casa'){
           $('.pedido_superficie').hide();
           $('.pedido_sup_util').hide();
           $('.pedido_estacionamiento').hide();
