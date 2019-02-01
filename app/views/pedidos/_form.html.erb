@@ -25,7 +25,7 @@ wrapper_mappings: {
   <div class="form-group">
   <h6 class="fw-6 text-black">Porfavor ingrese los datos sobre la propiedad a tasar:</h6>
   <br>
-    <%= f.input :tipo, collection: ['Departamento','Casa','Oficina', 'Terreno', 'Parcela', 'Estacionamiento'], :required => true %>
+    <%= f.input :tipo, collection: {'Departamento' => 'departamento','Casa' => 'casa','Oficina'=> 'oficina', 'Terreno'=> 'terreno', 'Parcela'=> 'parcela', 'Estacionamiento'=> 'estacionamiento'], :required => true %>
     <%= f.input :operacion, label: 'Operación', as: :radio_buttons, wrapper: :vertical_collection_inline, collection: ['Venta', 'Arriendo'], placeholder: 'Seleccione accion que desea realizar con la propiedad', :required => true %>
     <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.', :required => true, :input_html => { :id => 'address' } %> 
     
@@ -35,7 +35,7 @@ wrapper_mappings: {
     <%= f.input :comuna, collection: ['Seleccione e'], label: 'Comuna'%>
 
     <%= f.input :superficie, placeholder: 'Superficie total aprox.', label: 'Superficie total'%>
-    <%= f.input :sup_util, placeholder: 'Superficie util aprox.', label: "Superficie útil" %>
+    <%= f.input :sup_util, placeholder: 'Superficie util aprox.', label: "Superficie útil" , :required => true %>
     <%= f.input :terreno, label: 'Superficie del terreno', hint: 'Metros cuadrados' %>
     <%= f.input :constr, label: 'Superficie construida', hint: 'Metros cuadrados'%>
 
@@ -46,7 +46,7 @@ wrapper_mappings: {
     <%= f.input :num_piso, label: 'Cantidad de Pisos', :input_html => { :value => 1 } %>
     <%= f.input :piso, label: 'Piso en el que se encuentra'%>
     <%= f.input :privado, label: 'Privado(s)'%>
-    <%= f.input :activo, :input_html => { :value => 1 } %>
+    <%= f.input :activo, :input_html => { :value => 1 } , as: :hidden %>
 
     <%= f.input :descripcion, as: :text, placeholder: 'Datos adicionales que desee agregar sobre su propiedad' %>
    
