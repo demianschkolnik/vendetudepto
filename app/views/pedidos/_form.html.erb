@@ -26,7 +26,7 @@ wrapper_mappings: {
   <h6 class="fw-6 text-black">Porfavor ingrese los datos sobre la propiedad a tasar:</h6>
   <br>
     <%= f.input :tipo, collection: {'Departamento' => 'departamento','Casa' => 'casa','Oficina'=> 'oficina', 'Terreno'=> 'terreno', 'Parcela'=> 'parcela', 'Estacionamiento'=> 'estacionamiento'}, :required => true %>
-    <%= f.input :operacion, label: 'Operación', as: :radio_buttons, wrapper: :vertical_collection_inline, collection: ['Venta', 'Arriendo'], placeholder: 'Seleccione accion que desea realizar con la propiedad', :required => true %>
+    <%= f.input :operacion, label: 'Operación', as: :radio_buttons, wrapper: :vertical_collection_inline, collection: {'Venta' => 'venta', 'Arriendo'=>'arriendo'}, placeholder: 'Seleccione accion que desea realizar con la propiedad', :required => true %>
     <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.', :required => true, :input_html => { :id => 'address' } %> 
     
 
