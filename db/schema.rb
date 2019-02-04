@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "este"
     t.integer "oeste"
     t.integer "activo"
-    end
+    t.string "hash_id"
+  end
 
 end
