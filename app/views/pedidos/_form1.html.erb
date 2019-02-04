@@ -23,9 +23,11 @@ wrapper_mappings: {
     <%= f.input :telefono, label: 'Teléfono', placeholder: '+56912345678', :required => true %>
   </div> 
   <div class="form-group">
-  <h6 class="fw-6 text-black">Porfavor ingrese los datos sobre la propiedad a tasar:</h6>
+  <h6 class="fw-6 text-black">Porfavor ingrese sus preferencias:</h6>
   <br>
-    <%= f.input :tipo, collection: {'Departamento' => 'departamento','Casa' => 'casa','Oficina'=> 'oficina', 'Terreno'=> 'terreno', 'Parcela'=> 'parcela', 'Estacionamiento'=> 'estacionamiento'}, :required => true %>
+   
+  <%= f.input :precio_min, as: :range %>
+  <%= f.input :tipo, collection: {'Departamento' => 'departamento','Casa' => 'casa','Oficina'=> 'oficina', 'Terreno'=> 'terreno', 'Parcela'=> 'parcela', 'Estacionamiento'=> 'estacionamiento'}, :required => true %>
     <%= f.input :operacion, label: 'Operación', as: :radio_buttons, wrapper: :vertical_collection_inline, collection: {'Venta' => 'venta', 'Arriendo'=>'arriendo'}, placeholder: 'Seleccione accion que desea realizar con la propiedad', :required => true %>
     <%= f.input :direccion, label: 'Dirección', hint: 'Dirección de la propiedad a tasar.', :required => true, :input_html => { :id => 'address' } %> 
     
