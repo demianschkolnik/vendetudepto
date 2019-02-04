@@ -2,13 +2,14 @@ class PedidosController < ApplicationController
   before_action :set_pedido, only: [:show, :edit, :update, :destroy]
 
   # GET /pedidos
-  # GET /pedidos.json
+  # @pedido es el nombre de la variable a pasar. Pedido es el nombre del modelo (siempre en mayúsculas) y new es la accion en la base de datos.
   def index
     @pedido = Pedido.new
   end
 
   # GET /pedidos/1
-  # GET /pedidos/1.json
+  # Las acciones en un controlador están automáticamente relacionadas con la vista del mismo nombre (revisar rails routes)
+  # Se le está entregando el python a la vista con el nombre de la acción
   def show
     @pedidos = `python3 lib/assets/python/tasadoronline.py`
   end
