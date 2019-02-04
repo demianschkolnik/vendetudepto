@@ -1,5 +1,5 @@
 class Pedido < ApplicationRecord
-    
+    include Friendlyable
     validates :mail,   
         :presence => true, presence: { message: "Este campo es obligatorio." },
         :format => { :with => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/ ,
