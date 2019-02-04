@@ -1,0 +1,49 @@
+
+<%= simple_form_for(@cliente) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :nombre %>
+    <%= f.input :telefono %>
+    <%= f.input :mail %>
+    <%= f.input :fechacompra %>
+    <%= f.input :preciomin %>
+    <%= f.input :preciomax %>
+    <%= f.input :utilmin %>
+    <%= f.input :utilmax %>
+    <%= f.input :totalmin %>
+    <%= f.input :totalmax %>
+    <%= f.input :latmin %>
+    <%= f.input :latmax %>
+    <%= f.input :lonmin %>
+    <%= f.input :lonmax %>
+    <%= f.input :dormitoriosmin %>
+    <%= f.input :dormitoriosmax %>
+    <%= f.input :banosmin %>
+    <%= f.input :banosmax %>
+    <%= f.input :estacionamientos %>
+    <%= f.input :tipo %>
+    <%= f.input :operacion %>
+    <%= f.input :estado %>
+    <%= f.input :region %>
+    <%= f.input :comuna1 %>
+    <%= f.input :comuna2 %>
+    <%= f.input :comuna3 %>
+    <%= f.input :comuna4 %>
+    <%= f.input :comuna5 %>
+    <%= f.input :comuna6 %>
+    <%= f.input :metrodistance %>
+    <%= f.input :linea %>
+    <%= f.input :lineab %>
+    <%= f.input :lineac %>
+    <%= f.input :activo %>
+    <%= f.input :rentmin %>
+    <%= f.input :sendmail %>
+    <%= f.input :prioridad %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

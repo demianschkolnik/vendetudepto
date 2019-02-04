@@ -1,0 +1,2 @@
+json.extract! cliente, :id, :nombre, :telefono, :mail, :fechacompra, :preciomin, :preciomax, :utilmin, :utilmax, :totalmin, :totalmax, :latmin, :latmax, :lonmin, :lonmax, :dormitoriosmin, :dormitoriosmax, :banosmin, :banosmax, :estacionamientos, :tipo, :operacion, :estado, :region, :comuna1, :comuna2, :comuna3, :comuna4, :comuna5, :comuna6, :metrodistance, :linea, :lineab, :lineac, :activo, :rentmin, :sendmail, :prioridad, :created_at, :updated_at
+json.url cliente_url(cliente, format: :json)

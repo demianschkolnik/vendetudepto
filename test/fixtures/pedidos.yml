@@ -3,33 +3,55 @@
 one:
   nombre: MyString
   mail: MyString
-  telefono: 1
+  telefono: MyString
   descripcion: MyString
   tipo: MyString
   operacion: MyString
   region: MyString
   comuna: MyString
   direccion: MyString
-  superficie: 1
+  superficie: 
   dorms: 1
   bano: 1
   estacionamiento: 1
   anio: 1
   piso: 1
+  sup_util: 1
+  num_piso: 1
+  constr: 1
+  terreno: 1
+  privado: 1
+  norte: 1
+  sur: 1
+  este: 1
+  oeste: 1
+  activo: 1
+  hash: one
 
 two:
   nombre: MyString
   mail: MyString
-  telefono: 1
+  telefono: MyString
   descripcion: MyString
   tipo: MyString
   operacion: MyString
   region: MyString
   comuna: MyString
   direccion: MyString
-  superficie: 1
+  superficie: 
   dorms: 1
   bano: 1
   estacionamiento: 1
   anio: 1
   piso: 1
+  sup_util: 1
+  num_piso: 1
+  constr: 1
+  terreno: 1
+  privado: 1
+  norte: 1
+  sur: 1
+  este: 1
+  oeste: 1
+  activo: 1
+  hash: two

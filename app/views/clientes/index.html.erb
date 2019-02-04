@@ -1,0 +1,99 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Clientes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Telefono</th>
+      <th>Mail</th>
+      <th>Fechacompra</th>
+      <th>Preciomin</th>
+      <th>Preciomax</th>
+      <th>Utilmin</th>
+      <th>Utilmax</th>
+      <th>Totalmin</th>
+      <th>Totalmax</th>
+      <th>Latmin</th>
+      <th>Latmax</th>
+      <th>Lonmin</th>
+      <th>Lonmax</th>
+      <th>Dormitoriosmin</th>
+      <th>Dormitoriosmax</th>
+      <th>Banosmin</th>
+      <th>Banosmax</th>
+      <th>Estacionamientos</th>
+      <th>Tipo</th>
+      <th>Operacion</th>
+      <th>Estado</th>
+      <th>Region</th>
+      <th>Comuna1</th>
+      <th>Comuna2</th>
+      <th>Comuna3</th>
+      <th>Comuna4</th>
+      <th>Comuna5</th>
+      <th>Comuna6</th>
+      <th>Metrodistance</th>
+      <th>Linea</th>
+      <th>Lineab</th>
+      <th>Lineac</th>
+      <th>Activo</th>
+      <th>Rentmin</th>
+      <th>Sendmail</th>
+      <th>Prioridad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clientes.each do |cliente| %>
+      <tr>
+        <td><%= cliente.nombre %></td>
+        <td><%= cliente.telefono %></td>
+        <td><%= cliente.mail %></td>
+        <td><%= cliente.fechacompra %></td>
+        <td><%= cliente.preciomin %></td>
+        <td><%= cliente.preciomax %></td>
+        <td><%= cliente.utilmin %></td>
+        <td><%= cliente.utilmax %></td>
+        <td><%= cliente.totalmin %></td>
+        <td><%= cliente.totalmax %></td>
+        <td><%= cliente.latmin %></td>
+        <td><%= cliente.latmax %></td>
+        <td><%= cliente.lonmin %></td>
+        <td><%= cliente.lonmax %></td>
+        <td><%= cliente.dormitoriosmin %></td>
+        <td><%= cliente.dormitoriosmax %></td>
+        <td><%= cliente.banosmin %></td>
+        <td><%= cliente.banosmax %></td>
+        <td><%= cliente.estacionamientos %></td>
+        <td><%= cliente.tipo %></td>
+        <td><%= cliente.operacion %></td>
+        <td><%= cliente.estado %></td>
+        <td><%= cliente.region %></td>
+        <td><%= cliente.comuna1 %></td>
+        <td><%= cliente.comuna2 %></td>
+        <td><%= cliente.comuna3 %></td>
+        <td><%= cliente.comuna4 %></td>
+        <td><%= cliente.comuna5 %></td>
+        <td><%= cliente.comuna6 %></td>
+        <td><%= cliente.metrodistance %></td>
+        <td><%= cliente.linea %></td>
+        <td><%= cliente.lineab %></td>
+        <td><%= cliente.lineac %></td>
+        <td><%= cliente.activo %></td>
+        <td><%= cliente.rentmin %></td>
+        <td><%= cliente.sendmail %></td>
+        <td><%= cliente.prioridad %></td>
+        <td><%= link_to 'Show', cliente %></td>
+        <td><%= link_to 'Edit', edit_cliente_path(cliente) %></td>
+        <td><%= link_to 'Destroy', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cliente', new_cliente_path %>

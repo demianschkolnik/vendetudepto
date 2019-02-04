@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :clientes
+  resources :pedidos
   root 'pedidos#index'
   resources :pedidos do
     collection { post :validate }
