@@ -47,6 +47,15 @@ wrapper_mappings: {
     <%= f.input :piso, label: 'Piso en el que se encuentra'%>
     <%= f.input :privado, label: 'Privado(s)'%>
     <%= f.input :activo, :input_html => { :value => 1 } , as: :hidden %>
+    <div class="field">
+    <%= f.label "Area of Expertise" %><br />
+    <%= f.collection_check_boxes :orientacion_ids, Orientacion.all, :id, :nombre do |b| %>
+      <div class="collection-check-box">
+        <%= b.check_box %>
+        <%= b.label %>
+      </div>
+    <% end %>
+  </div>
 
     <%= f.input :descripcion, as: :text, placeholder: 'Datos adicionales que desee agregar sobre su propiedad' %>
    
