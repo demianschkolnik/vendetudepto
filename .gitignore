@@ -25,3 +25,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+lib/assets/python/tasadoronline.py
+lib/assets/python/__pycache__/sendMailTasacion.cpython-36.pyc
+lib/assets/python/sendMailTasacion.py

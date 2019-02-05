@@ -1,6 +1,5 @@
 class Pedido < ApplicationRecord
-  has_and_belongs_to_many :orientacions
-
+  
   include Friendlyable
   validates :mail,   
       :presence => true, presence: { message: "Este campo es obligatorio." },
