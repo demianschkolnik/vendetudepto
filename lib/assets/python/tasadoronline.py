@@ -52,25 +52,30 @@ strpiezas="Dormitorios"
 minmet=tasacion[2]
 maxmet=tasacion[3]
 piezas=tasacion[4]
+estacionamientos=tasacion[6]
 
 
 if tasacion[14] is not None:
 
-    util=tasacion[14]
+    minmet=tasacion[14]
 
-    total=tasacion[15]
+    maxmet=tasacion[15]
 
-    minmet="Superficie Construida"
-    maxmet="Superficie Terreno"
+    strminmet="Superficie Construida"
+    strmaxmet="Superficie Terreno"
+    estacionamientos='1'
 if tasacion[4] is None:
     piezas=tasacion[16]
     strpiezas="privados"
 lat,lon = gm.getCoordsWithAdress(direccion)
 print(tasacion)
+print(minmet)
+print(maxmet)
+print(piezas)
 precio,nivel,nrcomp,links=tb.calcularTasacion(tasacion[0],tasacion[1],float(lat),float(lon),float(minmet),float(maxmet),int(piezas),int(tasacion[5]),int(tasacion[6]))
 
 actualizarActividad()
 
-sm.sendMail(tasacion,precio,nivel,nrcomp,minmet,maxmet,piezas,strminmet,strmaxmet,strpiezas)
+sm.sendMail(tasacion,precio,nivel,nrcomp,minmet,maxmet,piezas,estacionamientos,strminmet,strmaxmet,strpiezas)
 
 
