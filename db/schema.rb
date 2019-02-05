@@ -52,6 +52,10 @@ ActiveRecord::Schema.define(version: 0) do
     t.text "prioridad"
   end
 
+  create_table "orientacion", id: :integer, default: nil, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "nombre", limit: 10
+  end
+
   create_table "pedidos", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "nombre", null: false
     t.string "mail", null: false
