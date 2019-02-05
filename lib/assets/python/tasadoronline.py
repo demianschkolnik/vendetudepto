@@ -11,7 +11,6 @@ yesterday=datetime.date(yesterday)
 import googleMapApi as gm
 import propManager as pm
 import sys
-import sendMailTasacion as sm
 
 
 
@@ -20,6 +19,7 @@ def actualizarActividad():
     sql = "UPDATE pedidos SET activo=0 WHERE activo=1"
 
     mariadb_connection = mysql.connect(user='root', password='sergei', host='127.0.0.1', database='railstest')
+
     cur = mariadb_connection.cursor()
     cur.execute(sql)
     mariadb_connection.commit()
@@ -38,13 +38,20 @@ def actualizarMail():
 def tasacion():
     mariadb_connection = mysql.connect(user='root', password='sergei', host='127.0.0.1', database='railstest')
     cur = mariadb_connection.cursor()
+<<<<<<< HEAD
     sql = "SELECT operacion,tipo,sup_util,superficie,dorms,bano,estacionamiento,direccion,comuna,nombre,mail,region,piso,anio,constr,terreno,privado FROM pedidos WHERE activo=1"
+=======
+    sql = "SELECT operacion,tipo,sup_util,superficie,dorms,bano,estacionamiento,direccion,comuna FROM pedidos WHERE activo=1"
+
+>>>>>>> parent of 73c83cc... nueva orientaicon
     cur.execute(sql)
     tasacion=cur.fetchall()
     return tasacion
+
 tasacion=tasacion()
 actualizarMail()
 tasacion=tasacion[0]
+print (tasacion)
 direccion = tasacion[7]
 strminmetr="Superficie Útil"
 strmaxmet="Superficie Total"
@@ -74,8 +81,13 @@ print(maxmet)
 print(piezas)
 precio,nivel,nrcomp,links=tb.calcularTasacion(tasacion[0],tasacion[1],float(lat),float(lon),float(minmet),float(maxmet),int(piezas),int(tasacion[5]),int(tasacion[6]))
 
+print("El precio tasado es UF " + str(precio)+", con un nivel de confianza: "+str(nivel)+\
+                                   ", tasación realizada comparandose con "+str(nrcomp)+" propiedades.")
 actualizarActividad()
+<<<<<<< HEAD
 
 sm.sendMail(tasacion,precio,nivel,nrcomp,minmet,maxmet,piezas,estacionamientos,strminmet,strmaxmet,strpiezas)
 
 
+=======
+>>>>>>> parent of 73c83cc... nueva orientaicon
