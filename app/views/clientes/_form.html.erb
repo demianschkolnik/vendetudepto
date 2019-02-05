@@ -1,12 +1,27 @@
 
-<%= simple_form_for(@cliente) do |f| %>
+<%= simple_form_for(@cliente, wrapper: :horizontal_form,
+wrapper_mappings: {
+  boolean:       :horizontal_boolean,
+  check_boxes:   :horizontal_collection,
+  date:          :horizontal_multi_select,
+  datetime:      :horizontal_multi_select,
+  file:          :horizontal_file,
+  radio_buttons: :horizontal_collection,
+  range:         :horizontal_range,
+  time:          :horizontal_multi_select
+}, validate: true) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :nombre %>
-    <%= f.input :telefono %>
-    <%= f.input :mail %>
+    <%= f.input :nombre, label: 'Nombre', :required => true %>
+    <%= f.input :mail, label: 'Correo', placeholder: 'nombre@dominio.com', :required => true %>
+    <%= f.input :telefono, label: 'Teléfono', placeholder: '+56912345678', :required => true %>
+  </div>
+  
+  <div class="form-group">
+      <h6 class="fw-6 text-black">Porfavor ingrese sus preferencias:</h6>
+      <br>
     <%= f.input :fechacompra %>
     <%= f.input :preciomin %>
     <%= f.input :preciomax %>
