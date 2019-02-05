@@ -4,7 +4,7 @@ from email.mime.text import  MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 
-def sendMail(tasacion,precio,nivel,nrcomp):
+def sendMail(tasacion,precio,nivel,nrcomp,minmet,maxmet,piezas,strminmet,strmaxmet,strpiezas):
     to=tasacion[10]
     cliente=tasacion[9]
     fromaddr = "contacto@bullestate.cl"
@@ -23,11 +23,11 @@ def sendMail(tasacion,precio,nivel,nrcomp):
     body+="\n\n"
     body+="Operación: "+str(tasacion[0])
     body+="\n\n"
-    body+="Superficie Útil: "+str(tasacion[2])
+    body+=strminmet+": "+str(minmet)
     body+="\n\n"
-    body+="Superficie Total: "+str(tasacion[3])
+    body+=strmaxmet+": "+str(maxmet)
     body+="\n\n"
-    body+="Dormitorios: "+str(tasacion[4])
+    body+=strpiezas+": "+str(piezas)
     body+="\n\n"
     body+="Baños: "+str(tasacion[5])
     body+="\n\n"

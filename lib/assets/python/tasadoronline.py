@@ -25,22 +25,52 @@ def actualizarActividad():
     mariadb_connection.commit()
     mariadb_connection.close()
 
+def actualizarMail():
+
+    sql = "UPDATE pedidos SET mail='0' WHERE mail='sergei@bullestate.cl'"
+
+    mariadb_connection = mysql.connect(user='root', password='sergei', host='127.0.0.1', database='railstest')
+    cur = mariadb_connection.cursor()
+    cur.execute(sql)
+    mariadb_connection.commit()
+    mariadb_connection.close()
+
 def tasacion():
     mariadb_connection = mysql.connect(user='root', password='sergei', host='127.0.0.1', database='railstest')
     cur = mariadb_connection.cursor()
-    sql = "SELECT operacion,tipo,sup_util,superficie,dorms,bano,estacionamiento,direccion,comuna,nombre,mail,region,piso,anio FROM pedidos WHERE activo=1"
+    sql = "SELECT operacion,tipo,sup_util,superficie,dorms,bano,estacionamiento,direccion,comuna,nombre,mail,region,piso,anio,constr,terreno,privado FROM pedidos WHERE activo=1"
     cur.execute(sql)
     tasacion=cur.fetchall()
     return tasacion
 tasacion=tasacion()
+actualizarMail()
 tasacion=tasacion[0]
 direccion = tasacion[7]
+strminmetr="Superficie Útil"
+strmaxmet="Superficie Total"
+strpiezas="Dormitorios"
+minmet=tasacion[2]
+maxmet=tasacion[3]
+piezas=tasacion[4]
 
 
+if tasacion[14] is not None:
+
+    util=tasacion[14]
+
+    total=tasacion[15]
+
+    minmet="Superficie Construida"
+    maxmet="Superficie Terreno"
+if tasacion[4] is None:
+    piezas=tasacion[16]
+    strpiezas="privados"
 lat,lon = gm.getCoordsWithAdress(direccion)
-precio,nivel,nrcomp,links=tb.calcularTasacion(tasacion[0],tasacion[1],float(lat),float(lon),float(tasacion[2]),float(tasacion[3]),int(tasacion[4]),int(tasacion[5]),int(tasacion[6]))
+print(tasacion)
+precio,nivel,nrcomp,links=tb.calcularTasacion(tasacion[0],tasacion[1],float(lat),float(lon),float(minmet),float(maxmet),int(piezas),int(tasacion[5]),int(tasacion[6]))
 
 actualizarActividad()
-sm.sendMail(tasacion,precio,nivel,nrcomp)
+
+sm.sendMail(tasacion,precio,nivel,nrcomp,minmet,maxmet,piezas,strminmet,strmaxmet,strpiezas)
 
 
