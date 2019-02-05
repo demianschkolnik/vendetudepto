@@ -49,7 +49,7 @@ wrapper_mappings: {
     <%= f.input :activo, :input_html => { :value => 1 } , as: :hidden %>
     <div class="field">
     <%= f.label "Area of Expertise" %><br />
-    <%= f.collection_check_boxes :orientacion_ids, Orientacion.all, :id, :nombre do |b| %>
+    <%= f.collection_check_boxes :orientaciones_ids, Orientacion.all, :id, :nombre do |b| %>
       <div class="collection-check-box">
         <%= b.check_box %>
         <%= b.label %>
