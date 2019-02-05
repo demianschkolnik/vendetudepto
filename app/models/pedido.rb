@@ -1,5 +1,5 @@
 class Pedido < ApplicationRecord
-  belongs_to :hash
+
   include Friendlyable
   validates :mail,   
       :presence => true, presence: { message: "Este campo es obligatorio." },
