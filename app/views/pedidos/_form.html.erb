@@ -47,10 +47,10 @@ wrapper_mappings: {
     <%= f.input :piso, label: 'Piso en el que se encuentra'%>
     <%= f.input :privado, label: 'Privado(s)'%>
     <%= f.input :activo, :input_html => { :value => 1 } , as: :hidden %>
-    <%= f.input :norte, as: :check_boxes, label: 'Orientación', :input_html => { :value =>  'Norte' } %>
-    <%= f.input :sur, as: :check_boxes, label: 'Orientación', :input_html => { :value =>  'Sur' } %>
-    <%= f.input :este, as: :check_boxes, label: 'Orientación', :input_html => { :value =>  'Este' } %>
-    <%= f.input :oeste, as: :check_boxes, label: 'Orientación', :input_html => { :value =>  'Oeste' } %>
+    <%= f.input :norte , label: 'Orientación', as: :check_boxes, collection: ['Norte'] %>
+    <%= f.input :sur , label: '', as: :check_boxes, collection: ['Sur']  %>
+    <%= f.input :oeste , label: '', as: :check_boxes, collection: ['Oeste']  %>
+    <%= f.input :este , label: '' , as: :check_boxes, collection: ['Este'] %>
     
     <%= f.input :descripcion, as: :text, placeholder: 'Datos adicionales que desee agregar sobre su propiedad' %>
    
