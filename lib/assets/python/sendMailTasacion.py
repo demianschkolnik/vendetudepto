@@ -31,9 +31,9 @@ def sendMail(tasacion,precio,nivel,nrcomp,minmet,maxmet,piezas,strminmet,strmaxm
     body+="\n\n"
     body+="Baños: "+str(tasacion[5])
     body+="\n\n"
-    if (tasacion[1] =! 'casa'):
-    body+="Estacionamientos: "+str(tasacion[6])
-    body+="\n\n"
+    if (tasacion[1] != 'casa'):
+        body+="Estacionamientos: "+str(tasacion[6])
+        body+="\n\n"
     body+="Dirección: "+str(tasacion[7])
     body+="\n\n"
     body+="Comuna: "+str(tasacion[8])

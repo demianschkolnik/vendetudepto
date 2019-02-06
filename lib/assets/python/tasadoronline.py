@@ -63,19 +63,16 @@ if tasacion[14] is not None:
 
     strminmet="Superficie Construida"
     strmaxmet="Superficie Terreno"
-    estacionamientos='1'
+    estacionamientos=1
 if tasacion[4] is None:
     piezas=tasacion[16]
     strpiezas="privados"
 lat,lon = gm.getCoordsWithAdress(direccion)
-print(tasacion)
-print(minmet)
-print(maxmet)
-print(piezas)
-precio,nivel,nrcomp,links=tb.calcularTasacion(tasacion[0],tasacion[1],float(lat),float(lon),float(minmet),float(maxmet),int(piezas),int(tasacion[5]),int(tasacion[6]))
+
+precio,nivel,nrcomp,links=tb.calcularTasacion(tasacion[0],tasacion[1],float(lat),float(lon),float(minmet),float(maxmet),int(piezas),int(tasacion[5]),int(estacionamientos))
 
 actualizarActividad()
 
-sm.sendMail(tasacion,precio,nivel,nrcomp,minmet,maxmet,piezas,estacionamientos,strminmet,strmaxmet,strpiezas)
+sm.sendMail(tasacion,precio,nivel,nrcomp,minmet,maxmet,piezas,strminmet,strmaxmet,strpiezas)
 
 
