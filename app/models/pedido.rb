@@ -1,5 +1,5 @@
 class Pedido < ApplicationRecord
-  enum qol_selection: ["norte", "sur". "este", "oeste"]
+  enum qol_selection: ["norte", "sur", "este", "oeste"]
   include Friendlyable
   validates :mail,   
       :presence => true, presence: { message: "Este campo es obligatorio." },
