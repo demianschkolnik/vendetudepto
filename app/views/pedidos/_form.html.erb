@@ -47,7 +47,8 @@ wrapper_mappings: {
     <%= f.input :piso, label: 'Piso en el que se encuentra'%>
     <%= f.input :privado, label: 'Privado(s)'%>
     <%= f.input :activo, :input_html => { :value => 1 } , as: :hidden %>
-    <h6> Orientacion </h6>
+    
+    <label class="col-sm-3 col-form-label integer optional" for= pedido_norte>Orientación(s)</label>
     <%= f.input :norte, label: '' , as: :boolean, collection: ['Norte'] %>
     <%= f.input :sur , label: '', as: :boolean, collection: ['Sur']  %>
     <%= f.input :oeste , label: '', as: :boolean, collection: ['Oeste']  %>
