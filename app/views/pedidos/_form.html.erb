@@ -47,7 +47,7 @@ wrapper_mappings: {
     <%= f.input :piso, label: 'Piso en el que se encuentra'%>
     <%= f.input :privado, label: 'Privado(s)'%>
     <%= f.input :activo, :input_html => { :value => 1 } , as: :hidden %>
-    <label class="col-sm-3 col-form-label integer optional" for= "pedido_norte" >Orientación(es)</label>
+    <label class="col-sm-3 col-form-label integer optional" for= "pedido_norte"  id="etiqueta" >Orientación(es)</label>
     <%= f.input :norte, label: '' , as: :boolean, collection: ['Norte'] %>
     <%= f.input :sur , label: '', as: :boolean, collection: ['Sur']  %>
     <%= f.input :oeste , label: '', as: :boolean, collection: ['Oeste']  %>
@@ -77,7 +77,7 @@ wrapper_mappings: {
           $('.pedido_este').hide();
           $('.pedido_oeste').hide();
           $('.pedido_privado').hide();
-         
+          $('.etiqueta').hide();
           }
         else if ($('#pedido_tipo').val() == 'estacionamiento'){
           $('.pedido_superficie').hide();
