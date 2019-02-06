@@ -47,7 +47,7 @@ wrapper_mappings: {
     <%= f.input :piso, label: 'Piso en el que se encuentra'%>
     <%= f.input :privado, label: 'Privado(s)'%>
     <%= f.input :activo, :input_html => { :value => 1 } , as: :hidden %>
-    <%= f.input :norte , label: 'Orientación', as: :boolean, collection: ['Norte'] %>
+    <%= f.input :norte , as: :boolean, collection: ['Norte'] %>
     <%= f.input :sur , label: '', as: :boolean, collection: ['Sur']  %>
     <%= f.input :oeste , label: '', as: :boolean, collection: ['Oeste']  %>
     <%= f.input :este , label: '' , as: :boolean, collection: ['Este'] %>
