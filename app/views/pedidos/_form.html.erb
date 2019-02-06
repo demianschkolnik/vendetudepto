@@ -51,6 +51,8 @@ wrapper_mappings: {
     <%= f.input :sur , label: '', as: :check_boxes, collection: ['Sur']  %>
     <%= f.input :oeste , label: '', as: :check_boxes, collection: ['Oeste']  %>
     <%= f.input :este , label: '' , as: :check_boxes, collection: ['Este'] %>
+
+    <%=f.input :qol_selection, :as => :select, :collection => Pedido.qol_selections.keys.to_a %>
     
     <%= f.input :descripcion, as: :text, placeholder: 'Datos adicionales que desee agregar sobre su propiedad' %>
    
