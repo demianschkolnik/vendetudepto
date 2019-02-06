@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "oeste"
     t.integer "activo"
     t.string "hash_id"
+    t.string "orientacion", limit: 10
   end
 
 end
