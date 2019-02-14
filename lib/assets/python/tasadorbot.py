@@ -75,6 +75,8 @@ def calcularTasacion(operacion,tipo,lat,lon,util,total,dormitorios,banos,estacio
     distanciat3_2=[]
     distanciat4_1=[]
     distanciat4_2=[]
+    distanciat5_1=[]
+    distanciat5_2=[]
     k0=[0]*14
     k1=[0]*14
     k21=[0]*14
@@ -83,6 +85,8 @@ def calcularTasacion(operacion,tipo,lat,lon,util,total,dormitorios,banos,estacio
     k32=[0]*14
     k41=[0]*14
     k42=[0]*14
+    k51=[0]*14
+    k52=[0]*14
 
     for j in data:
         # i3=op, i4=tipo, i5=precio, i6=dorms, i7=baños, i12= estacionamientos i8=util, i9=total
@@ -159,6 +163,20 @@ def calcularTasacion(operacion,tipo,lat,lon,util,total,dormitorios,banos,estacio
                 distanciat4_2.append(j)
                 j=j[:-1]
                 k42=j
+            #T5.1
+            if (distance < 2000) and (abs(util/j[8]-1)<0.2) and (abs(total/j[9]-1)<0.4) and ((k51[5]!=j[5]) or (k51[8]!=j[8]) or (k51[9]!=j[9]) or (k51[6]!=j[6]) or (k51[7]!=j[7]) or (k51[12]!=j[12])):
+                d=sqrt(distance*distance+(100*abs(util-j[8])*(100*abs(util-j[8])))+(100*abs(total-j[9])*(100*abs(total-j[9]))))
+                j.append(d)
+                distanciat5_1.append(j)
+                j=j[:-1]
+                k51=j
+            #T5.2
+            if (distance < 3000) and (abs(util/j[8]-1)<0.2) and (abs(total/j[9]-1)<0.4) and ((k52[5]!=j[5]) or (k52[8]!=j[8]) or (k52[9]!=j[9]) or (k52[6]!=j[6]) or (k52[7]!=j[7]) or (k52[12]!=j[12])):
+                d=sqrt(distance*distance+(100*abs(util-j[8])*(100*abs(util-j[8])))+(100*abs(total-j[9])*(100*abs(total-j[9]))))
+                j.append(d)
+                distanciat5_2.append(j)
+                j=j[:-1]
+                k52=j
 
     t_actual="A+"
     cota=10
@@ -189,10 +207,19 @@ def calcularTasacion(operacion,tipo,lat,lon,util,total,dormitorios,banos,estacio
     elif len(distanciat4_2)>=cota:
         distancia=distanciat4_2
         t_actual="D-"
+    elif len(distanciat5_1)>=cota:
+        distancia=distanciat4_2
+        t_actual="E+"
+    elif len(distanciat5_2)>=cota:
+        distancia=distanciat4_2
+        t_actual="E-"
+
+    elif len(distanciat5_2)>=3:
+        distancia=distanciat4_2
+        t_actual="F+"
 
     else:
-        print("no se han encontrado propiedades para comparar")
-        return 0,"E",len(distanciat4_2),[]
+        return 0,"F-",len(distanciat4_2),[]
 
     distancias=sorted(distancia,key=lambda x:x[14])
     try:
