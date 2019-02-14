@@ -5,6 +5,7 @@ from email.mime.base import MIMEBase
 from email import encoders
 
 def sendMail(tasacion,precio,nivel,nrcomp,minmet,maxmet,piezas,strminmet,strmaxmet,strpiezas):
+    print("entro al mail sender")
     to=tasacion[10]
     cliente=tasacion[9]
     fromaddr = "contacto@bullestate.cl"
