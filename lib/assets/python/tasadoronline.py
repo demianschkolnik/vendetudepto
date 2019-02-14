@@ -46,7 +46,7 @@ tasacion=tasacion()
 actualizarMail()
 tasacion=tasacion[0]
 direccion = tasacion[7]
-strminmetr="Superficie Útil"
+strminmet="Superficie Útil"
 strmaxmet="Superficie Total"
 strpiezas="Dormitorios"
 minmet=tasacion[2]
