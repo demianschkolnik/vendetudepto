@@ -65,6 +65,7 @@ def precio_from_portalinmobiliario(id2):
 
 def calcularTasacion(operacion,tipo,lat,lon,util,total,dormitorios,banos,estacionamientos):
 
+    print("entro al tasador")
 
     data = from_portalinmobiliario()
     distanciat0=[]
@@ -278,6 +279,7 @@ def calcularTasacion(operacion,tipo,lat,lon,util,total,dormitorios,banos,estacio
 
     try:
         price = int(price/uf.getUf())
+        print(price)
         return(price,t_actual,len(distancias),links)
 
     except:
