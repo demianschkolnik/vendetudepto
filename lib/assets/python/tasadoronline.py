@@ -77,7 +77,10 @@ actualizarActividad()
 
 print("actividad actualizada")
 
-sm.sendMail(tasacion,precio,nivel,nrcomp,minmet,maxmet,piezas,strminmet,strmaxmet,strpiezas)
+try:
+    sm.sendMail(tasacion,precio,nivel,nrcomp,minmet,maxmet,piezas,strminmet,strmaxmet,strpiezas)
+except Exception as e:
+    print(e)
 
 print("mail enviado")
 
