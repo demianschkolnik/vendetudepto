@@ -72,14 +72,13 @@ lat,lon = gm.getCoordsWithAdress(direccion)
 
 precio,nivel,nrcomp,links=tb.calcularTasacion(tasacion[0],tasacion[1],float(lat),float(lon),float(minmet),float(maxmet),int(piezas),int(tasacion[5]),int(estacionamientos))
 
-print(precio)
-print(nivel)
-print(nrcomp)
 
 actualizarActividad()
 
 print("actividad actualizada")
 
 sm.sendMail(tasacion,precio,nivel,nrcomp,minmet,maxmet,piezas,strminmet,strmaxmet,strpiezas)
+
+print("mail enviado")
 
 
