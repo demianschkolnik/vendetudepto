@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  before_filter :set_headers
+  before_action :set_headers
 
   def set_headers
     headers['Access-Control-Allow-Origin'] = '*'
