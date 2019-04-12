@@ -1,6 +1,8 @@
 class PedidosController < ApplicationController
   before_action :set_pedido, only: [:show, :edit, :update, :destroy]
 
+  skip_before_action :verify_authenticity_token, only: [:create]
+
   # GET /pedidos
   # @pedido es el nombre de la variable a pasar. Pedido es el nombre del modelo (siempre en mayúsculas) y new es la accion en la base de datos.
   def index
@@ -76,7 +78,7 @@ class PedidosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pedido_params
-      params.require(:pedido).permit(:nombre, :mail, :telefono, :descripcion, :tipo, :operacion, :region, :comuna, :direccion, :superficie, :dorms, :bano, :estacionamiento, :anio, 
+      params.require(:pedido).permit(:nombre, :mail, :telefono, :descripcion, :origen, :tipo, :operacion, :region, :comuna, :direccion, :superficie, :dorms, :bano, :estacionamiento, :anio, 
       :norte, :sur, :este, :oeste, :sup_util, :terreno, :privado, :num_piso, :constr, :activo)
 
     end

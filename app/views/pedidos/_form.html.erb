@@ -15,7 +15,7 @@ wrapper_mappings: {
     
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
+  <%= f.hidden_field :origen, value: 'vendetudepto.cl' %>
   <div class="form-group">
     <%= f.input :nombre, label: 'Nombre', :required => true %>
     <%= f.input :mail, label: 'Correo', placeholder: 'nombre@dominio.com', :required => true %>

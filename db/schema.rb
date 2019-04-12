@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_03_24_161006) do
 
   create_table "clientes", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.text "nombre"
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "activo"
     t.string "hash_id"
     t.string "orientacion", limit: 10
+    t.string "origen"
   end
 
 end
